@@ -1,11 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 import { Home } from './view';
+import { Nav } from './components';
+
+import './App.css';
 
 const App = () => {
   return (
-    <Home />
+    <>
+      <Nav />
+      <Home />
+    </>
   )
 }
 
