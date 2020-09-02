@@ -11,25 +11,44 @@ const Perguntas = () => {
 
   const perguntas = getPerguntas();
 
-  const getPerguntas = () => {
+  function getPerguntas() {
     const perguntas = [
       {
         pergunta: constants["perguntas.pergunta1"],
-        resposta: 'Resposta 1'
+        resposta: constants["perguntas.resposta1"]
       },
       {
-        pergunta: 'Pergunta 2',
-        resposta: 'Resposta 2'
-      }
+        pergunta: constants["perguntas.pergunta2"],
+        resposta: constants["perguntas.resposta2"]
+      },
+      {
+        pergunta: constants["perguntas.pergunta3"],
+        resposta: constants["perguntas.resposta3"]
+      },
+      {
+        pergunta: constants["perguntas.pergunta4"],
+        resposta: constants["perguntas.resposta4"]
+      },
+      {
+        pergunta: constants["perguntas.pergunta5"],
+        resposta: constants["perguntas.resposta5"]
+      },
+      {
+        pergunta: constants["perguntas.pergunta6"],
+        resposta: constants["perguntas.resposta6"]
+      },
+      {
+        pergunta: constants["perguntas.pergunta7"],
+        resposta: constants["perguntas.resposta7"]
+      },
     ];
     return perguntas;
   }
 
   return (
     <div>
-      <h1>Perguntas Frequentes</h1>
+      <h6>Perguntas Frequentes</h6>
       {
-
         perguntas.map(({ pergunta, resposta }, index) => (
           <div key={index} className={selectedQuestion === index ? 'open' : ''}>
             <p className='pergunta' onClick={() => openQuestion(index)}>{pergunta}</p>
