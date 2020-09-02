@@ -1,21 +1,20 @@
-import React from 'react';
-import '../Perguntas/Perguntas.css';
+import React, { useState } from 'react';
 
-const {useState} = React;
+import constants from '../../constants/texts'
 
 const Perguntas = () => {
-  const [ selectedQuestion, toggleQuestion ] = useState(-1);
-  
+  const [selectedQuestion, toggleQuestion] = useState(-1);
+
   function openQuestion(index) {
     toggleQuestion(selectedQuestion === index ? -1 : index);
   }
 
   const perguntas = getPerguntas();
 
-  function getPerguntas() {
+  const getPerguntas = () => {
     const perguntas = [
       {
-        pergunta: 'Pergunta 1',
+        pergunta: constants["perguntas.pergunta1"],
         resposta: 'Resposta 1'
       },
       {
@@ -25,16 +24,19 @@ const Perguntas = () => {
     ];
     return perguntas;
   }
-  
+
   return (
     <div>
       <h1>Perguntas Frequentes</h1>
-        {perguntas.map(( { pergunta, resposta}, index) => (
+      {
+
+        perguntas.map(({ pergunta, resposta }, index) => (
           <div key={index} className={selectedQuestion === index ? 'open' : ''}>
             <p className='pergunta' onClick={() => openQuestion(index)}>{pergunta}</p>
             <p className='resposta'>{resposta}</p>
           </div>
-        ))}
+        ))
+      }
     </div>
   )
 }

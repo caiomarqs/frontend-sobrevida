@@ -13,14 +13,14 @@ $h3-font-size: 2.5rem;
 $h4-font-size: 2.125rem;
 $h5-font-size: 1.75rem;
 $h6-font-size: 1.625rem;
-$sub1-font-size: 17px;
-$sub2-font-size: 15px;
-$body1-font-size: 17px;
-$body2-font-size: 17px;
-$btn-font-size: 12px;
-$links-font-size: 14px;
-$caption-font-size: 12px;
-$overline-font-size: 10px;
+$sub1-font-size: 1.0625rem;
+$sub2-font-size: 0.9375rem;
+$body1-font-size: 1.0625rem;
+$body2-font-size: 1.0625rem;
+$btn-font-size: 0.75rem;
+$links-font-size: 0.875rem;
+$caption-font-size: 0.75rem;
+$overline-font-size: 0.625rem;
 
 $h1-line-height: 4.125rem;
 $h2-line-height: 3.5625rem;
@@ -28,11 +28,47 @@ $h3-line-height: 3rem;
 $h4-line-height: 2.5625rem;
 $h5-line-height: 2.125rem;
 $h6-line-height: 2rem;
-$sub1-line-height: 22px;
-$sub2-line-height: 20px;
-$body1-line-height: 22px;
-$body2-line-height: 22px;
-$btn-line-height: 14px;
-$links-line-height: 17px;
-$caption-line-height: 16px;
-$overline-line-height: 12px;
+$sub1-line-height: 1.375rem;
+$sub2-line-height: 1.25rem;
+$body1-line-height: 1.375rem;
+$body2-line-height: 1.375rem;
+$btn-line-height: 0.875rem;
+$links-line-height: 1.0625rem;
+$caption-line-height: 1rem;
+$overline-line-height: 0.75rem;
+
+h1 {
+    font-weight: bold;
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
+}
+
+h5 {
+    font-weight: bold;
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
+}
+
+h6 {
+    font-weight: bold;
+    font-size: $h6-font-size;
+    line-height: $h6-line-height;
+}
