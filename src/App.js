@@ -4,7 +4,7 @@ import { Home } from './view';
 import { Nav } from './components';
 import Chart from './components/Chart/Chart'
 
-import './App.css';
+import './_sass/styles.scss';
 
 const App = () => {
   return (

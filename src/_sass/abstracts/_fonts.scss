@@ -1,0 +1,8 @@
+//Is a open source alternative for SF font
+@import url("https://rsms.me/inter/inter.css");
+
+$font-family: "Inter", sans-serif;
+
+html {
+    font-family: $font-family;
+}

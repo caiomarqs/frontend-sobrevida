@@ -5,9 +5,9 @@ import './index.css'
 
 const Nav = () => {
     return (
-        <header id="nav">
+        <nav id="nav">
             <h1>{constants["nav.titulo"]}</h1>
-        </header>
+        </nav>
     )
 }
 
