@@ -1,12 +1,21 @@
 import React from 'react'
 
-import constants from '../../constants/texts'
-import './index.css'
+
 
 const Nav = () => {
     return (
-        <nav id="nav">
-            <h1>{constants["nav.titulo"]}</h1>
+        <nav className="navbar fixed-top">
+            <div className="container">
+                <a className="navbar-brand-logo" href="/">
+                    <img src={require('../../assets/brand/nav-brand-logo.svg')} />
+                    <img src={require('../../assets/brand/nav-brand-text.svg')} />
+                </a>
+                <ul className="menu-items">
+                    <li>
+                        <a></a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     )
 }

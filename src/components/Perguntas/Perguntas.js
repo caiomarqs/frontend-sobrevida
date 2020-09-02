@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 
 import constants from '../../constants/texts'
 
+const getPerguntas = () => {
+  const perguntas = [
+    {
+      pergunta: constants["perguntas.pergunta1"],
+      resposta: 'Resposta 1'
+    },
+    {
+      pergunta: 'Pergunta 2',
+      resposta: 'Resposta 2'
+    }
+  ];
+  return perguntas;
+}
+
 const Perguntas = () => {
   const [selectedQuestion, toggleQuestion] = useState(-1);
 
@@ -10,20 +24,6 @@ const Perguntas = () => {
   }
 
   const perguntas = getPerguntas();
-
-  const getPerguntas = () => {
-    const perguntas = [
-      {
-        pergunta: constants["perguntas.pergunta1"],
-        resposta: 'Resposta 1'
-      },
-      {
-        pergunta: 'Pergunta 2',
-        resposta: 'Resposta 2'
-      }
-    ];
-    return perguntas;
-  }
 
   return (
     <div>

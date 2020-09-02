@@ -72,3 +72,51 @@ h6 {
     font-size: $h6-font-size;
     line-height: $h6-line-height;
 }
+
+@mixin sub1(){
+    font-weight: 500;
+    font-size: $sub1-font-size;
+    line-height: $sub1-line-height;
+}
+
+@mixin sub2(){
+    font-weight: bold;
+    font-size: $sub2-font-size;
+    line-height: $sub2-line-height;
+}
+
+@mixin body1(){
+    font-weight: 300;
+    font-size: $body1-font-size;
+    line-height: $body1-line-height;
+}
+
+@mixin body2(){
+    font-weight: bold;
+    font-size: $body2-font-size;
+    line-height: $body2-line-height;
+}
+
+@mixin links(){
+    font-weight: bold;
+    font-size: $links-font-size;
+    line-height: $links-line-height;
+}
+
+@mixin btn-font(){
+    font-weight: 900;
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+}
+
+@mixin caption(){
+    font-weight: 500;
+    font-size: $caption-font-size;
+    line-height: $caption-line-height;
+}
+
+@mixin overline(){
+    font-weight: 300;
+    font-size: $overline-font-size;
+    line-height: $overline-line-height;
+}

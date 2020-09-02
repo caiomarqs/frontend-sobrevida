@@ -1,20 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import { Home } from './view';
 import { Nav } from './components';
-import Chart from './components/Chart/Chart'
-import Perguntas from './components/Perguntas/Perguntas'
+import { Home, NotFound } from './view';
 
 import './_sass/styles.scss';
 
 const App = () => {
   return (
-    <>
+    <Router>
+      {/* Nav vai compilar em todas as paginas */}
       <Nav />
-      <Home />
-      <Chart />
-      <Perguntas />
-    </>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </Router>
   )
 }
 
