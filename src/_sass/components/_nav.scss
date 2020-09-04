@@ -21,6 +21,7 @@ nav {
     ul {
         display: flex;
         margin-left: 16px;
+        flex: 1;
 
         li > a {
             color: $branco-000;
@@ -59,34 +60,28 @@ nav.scrolled {
         fill: $preto-000;
     }
 
-    ul {
-        flex: 1;
-        li > a {
-            color: $cinza-600;
-            filter: opacity(0.8);
-            transition: ease-in 0.15s filter;
-            margin-right: 16px;
-            flex: 1;
+    ul > li > a {
+        color: $cinza-600;
+        filter: opacity(0.8);
+        transition: ease-in 0.15s filter, ease-in 0.15s color;
+        margin-right: 16px;
 
-            &:hover {
-                text-decoration: none;
-                color: $preto-000;
-                filter: opacity(1);
-            }
-
-            &:active {
-                text-decoration: none;
-                color: $preto-000;
-                filter: opacity(1);
-            }
+        &:hover {
+            text-decoration: none;
+            color: $preto-000;
+            filter: opacity(1);
         }
 
-        //Font Style
-        @include links();
+        &:active {
+            text-decoration: none;
+            color: $preto-000;
+            filter: opacity(1);
+        }
     }
 
     .nav-button {
         justify-self: flex-end;
         display: flex;
+        transition: ease-in 0.15s display, ease-in 0.15s filter;
     }
 }
