@@ -13,7 +13,13 @@ const Nav = () => {
 
         const handleScroll = () => {
             if (window.scrollY > 50) {
-                setStyle(s => `${s} scrolled`)
+                
+                setStyle(s => {
+                    if(s !== `fixed-top scrolled`){
+                        return `${s} scrolled`
+                    }
+                    return s
+                })
             }
             else {
                 setStyle(`fixed-top`)
