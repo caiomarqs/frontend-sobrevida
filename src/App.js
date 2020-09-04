@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import { Nav } from './components';
+import { Nav, Footer } from './components';
 import { Home, NotFound } from './view';
 
 import './_sass/styles.scss';
@@ -15,6 +15,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route path="*" component={NotFound} />
       </Switch>
+      <Footer/>
     </Router>
   )
 }

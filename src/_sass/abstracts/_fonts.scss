@@ -103,6 +103,12 @@ h6 {
     line-height: $links-line-height;
 }
 
+@mixin linksFooter {
+    font-weight: 300;
+    font-size: $links-font-size;
+    line-height: $links-line-height;
+}
+
 @mixin btn-font(){
     font-weight: 900;
     font-size: $btn-font-size;
