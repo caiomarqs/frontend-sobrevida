@@ -54,27 +54,23 @@
 .outline-button-primary {
     background-color: transparent;
     color: $vinho-000;
-    transition: filter 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out ;
     border: 1px solid $vinho-000;
-    filter: saturate(0.8);
     
     &:hover {
-        color: $vinho-000;
-        filter: saturate(1);
+        background-color: $vinho-000;
+        color: $branco-000;
     }
 }
 
 .outline-button-secondary {
     background-color: transparent;
     color: $vermelho-000;
-    transition: filter 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out ;
     border: 1px solid $vermelho-000;
-    filter: saturate(0.8);
     
     &:hover {
-        color: $vermelho-000;
-        filter: saturate(1);
+        background-color: $vermelho-000;
+        color: $branco-000;
     }
 }
-
-

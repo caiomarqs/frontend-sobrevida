@@ -1,0 +1,37 @@
+#para-quem-section {
+    min-height: 42rem;
+    background-color: $verde-p-000;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        min-height: 42rem;
+
+        #para-quem-contetudo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 0.75rem 0 0;
+
+            h3{
+                color: $vinho-000;
+                height: 7.4375rem;
+                margin-bottom: 2.875rem;
+            }
+            p{
+                @include body1();
+                margin-bottom: 2.875rem;
+            }
+        }
+
+        #para-quem-img {
+            padding: 0 0 0 0.75rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

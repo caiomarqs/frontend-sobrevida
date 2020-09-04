@@ -2,7 +2,7 @@ import React from 'react'
 
 import { PrincipalSection } from './HomeSections/PrincipalSection'
 import { DoeSection } from './HomeSections/DoeSection'
-import { PraQuemSection } from './HomeSections/PraQuemSection'
+import { ParaQuemSection } from './HomeSections/ParaQuemSection'
 import { ChartsSection } from './HomeSections/ChartsSections'
 import { DuvidasSection } from './HomeSections/DuvidasSection'
 import { ChatBrandSection } from './HomeSections/ChatBrandSection'
@@ -12,7 +12,7 @@ const Home = () => {
         <>
             <PrincipalSection />
             <DoeSection />
-            <PraQuemSection />
+            <ParaQuemSection />
             <ChartsSection />
             <DuvidasSection />
             <ChatBrandSection />

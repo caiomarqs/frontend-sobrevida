@@ -24,8 +24,8 @@ export default {
     'informacao.conteudo4.tipo1':'Doador vivo é qualquer pessoa saudável e capaz, nos termos da lei, que concorde com a doação e que esteja apta a realizá-la sem prejudicar sua própria saúde. O doador vivo pode doar um dos rins, parte do fígado ou dos pulmões e medula óssea. ',
     'informacao.conteudo4.tipo2':'Doador falecido é qualquer pessoa identificada cuja morte encefálica ou parada cardíaca tenham sido comprovadas e cuja família autorize a doação. O doador falecido por morte encefálica pode doar fígado, rins, pulmões, pâncreas, coração, intestino delgado e tecidos. O doador falecido por parada cardíaca pode doar tecidos: córneas, pele, ossos, tendões, vasos sanguíneos entre outros.',
     
-    'informacao.titulo5':'Para quem vão os órgãos doados?',
-    'informação.conteudo5':'Os órgãos doados vãos para pacientes que necessitam de transplante e estão aguardando em uma lista. A posição nesta lista é definida por critérios técnicos de compatibilidade entre doador e receptor, tais como, a compatibilidade sanguínea, antropométrica, gravidade do quadro e tempo de espera em lista do receptor. Para alguns tipos de transplantes é exigida, ainda, a compatibilidade genética.',
+    'paraquemSection.titulo':'Para quem vão os órgãos doados?',
+    'paraquemSection.conteudo':'Os órgãos doados vãos para pacientes que necessitam de transplante e estão aguardando em uma lista. A posição nesta lista é definida por critérios técnicos de compatibilidade entre doador e receptor, tais como, a compatibilidade sanguínea, antropométrica, gravidade do quadro e tempo de espera em lista do receptor. Para alguns tipos de transplantes é exigida, ainda, a compatibilidade genética.',
 
     'informacao.titulo6':'Morte encefálica',
     'informação.conteudo6':'A morte encefálica é a perda completa e irreversível das funções cerebrais. No Brasil, o diagnóstico de morte encefálica é regulamentado por uma Resolução do Conselho Federal de Medicina, que determina serem necessários dois exames clínicos realizados por médicos diferentes e um exame complementar (gráfico, metabólico ou de imagem).',
