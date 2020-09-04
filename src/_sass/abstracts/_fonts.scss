@@ -86,19 +86,19 @@ h6 {
 }
 
 @mixin body1(){
-    font-weight: 300;
+    font-weight: 200;
     font-size: $body1-font-size;
     line-height: $body1-line-height;
 }
 
 @mixin body2(){
-    font-weight: bold;
+    font-weight: 500;
     font-size: $body2-font-size;
     line-height: $body2-line-height;
 }
 
 @mixin links(){
-    font-weight: bold;
+    font-weight: 500;
     font-size: $links-font-size;
     line-height: $links-line-height;
 }
@@ -116,7 +116,7 @@ h6 {
 }
 
 @mixin overline(){
-    font-weight: 300;
+    font-weight: 200;
     font-size: $overline-font-size;
     line-height: $overline-line-height;
 }

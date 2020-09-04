@@ -31,7 +31,7 @@
         ),
         $value
     );
-    
+
     $is-angle: type-of($value) == "number" and index("deg" "grad" "turn" "rad", unit($value));
 
     @return $is-direction or $is-angle;
@@ -180,5 +180,13 @@
     }
     &:-o-scrollbar {
         color: #{$str};
+    }
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 50) {
+        @return #333;
+    } @else {
+        @return #f4f4f4;
     }
 }

@@ -1,14 +1,14 @@
 export default {
-    'nav.titulo': 'sobreVida',
     'nav.button1': 'Informações',
     'nav.button2': 'Depoimentos',
     'nav.button3': 'Dúvidas',
     'nav.button4': 'Sobre',
 
-    'inicio.msg1':'Diminua os índices de recusa familiar! Faça seu cadastro e conscientize sua família sobre a vontade de ser doador! Sua vontade não será esquecida!',
-    'inicio.msg2':'Ficou com dúvidas a respeito da doação de órgãos? Converse com o chat SobreVida.',
-    'inicio.msg3':'No momento mais difícil de nossas vidas, precisamos dizer sim a doação de órgãos! #A_Vida_Continua #SetembroVerde.',
-    'inicio.mgs4':'"Não pense na doação de órgãos como oferecer uma parte de você para que um desconhecido possa viver. Na realidade é um desconhecido que oferece o corpo para que uma parte de você possa continuar vivendo"',
+    'principal.titulo': 'Seja um doador de orgãos',
+    'principal.msg1':'Diminua os índices de recusa familiar! Faça seu cadastro e conscientize sua família sobre a vontade de ser doador! Sua vontade não será esquecida!',
+    'principal.msg2':'Ficou com dúvidas a respeito da doação de órgãos? Converse com o chat SobreVida.',
+    'principal.msg3':'No momento mais difícil de nossas vidas, precisamos dizer sim a doação de órgãos! #A_Vida_Continua #SetembroVerde.',
+    'principal.mgs4':'"Não pense na doação de órgãos como oferecer uma parte de você para que um desconhecido possa viver. Na realidade é um desconhecido que oferece o corpo para que uma parte de você possa continuar vivendo"',
 
     'informacao.titulo1':'Doar órgãos é um ato de amor e solidariedade',
     'informacao.conteudo1':'O transplante pode salvar vidas ou devolver a qualidade de vida do paciente transplantado. Além disso, estrutura a saúde física e psicológica de toda a família envolvida.',

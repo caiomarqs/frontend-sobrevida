@@ -1,0 +1,80 @@
+.custom-button {
+    width: 168px;
+    height: 48px;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    @include btn-font();
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.0313rem;
+    span{
+        width: 100%;
+        text-align: center;
+    }
+
+    &:hover{
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.solid-button-primary {
+    background-color: $vinho-000;
+    color: $branco-000;
+    transition: filter 0.15s ease-in-out;
+
+    &:hover {
+        background-color: $vinho-000;
+        color: $branco-000;
+        filter: saturate(0.8);
+    }
+
+    &:focus {
+        filter: saturate(1);
+    }
+}
+
+.solid-button-secondary {
+    background-color: $vermelho-000;
+    color: $branco-000;
+    transition: filter 0.15s ease-in-out;
+
+    &:hover {
+        background-color: $vermelho-000;
+        color: $branco-000;
+        filter: saturate(0.8);
+    }
+
+    &:focus {
+        filter: saturate(1);
+    }
+}
+
+.outline-button-primary {
+    background-color: transparent;
+    color: $vinho-000;
+    transition: filter 0.15s ease-in-out;
+    border: 1px solid $vinho-000;
+    filter: saturate(0.8);
+    
+    &:hover {
+        color: $vinho-000;
+        filter: saturate(1);
+    }
+}
+
+.outline-button-secondary {
+    background-color: transparent;
+    color: $vermelho-000;
+    transition: filter 0.15s ease-in-out;
+    border: 1px solid $vermelho-000;
+    filter: saturate(0.8);
+    
+    &:hover {
+        color: $vermelho-000;
+        filter: saturate(1);
+    }
+}
+
+
