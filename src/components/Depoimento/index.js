@@ -6,7 +6,7 @@ const Depoimento = ({ img, title, subTitle, body ='.', ...otherProps }) => {
     
     const thisBoddy = () => {
         const paragraphs = body.split('.p')
-        return paragraphs.map(content => <p className='depoimento-body'>{content}</p>)
+        return paragraphs.map((content, i) => <p key={`depoimento-body-p-${i}`} className='depoimento-body'>{content}</p>)
     }
 
     return (

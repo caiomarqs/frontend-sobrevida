@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import constants from '../../constants/texts'
+import { ExpandArrow } from '../Icons';
 
 const Perguntas = () => {
   const [selectedQuestion, toggleQuestion] = useState(-1);
@@ -47,12 +48,14 @@ const Perguntas = () => {
 
   return (
     <div>
-      <h6>Perguntas Frequentes</h6>
       {
         perguntas.map(({ pergunta, resposta }, index) => (
-          <div key={index} className={selectedQuestion === index ? 'open' : ''}>
-            <p className='pergunta' onClick={() => openQuestion(index)}>{pergunta}</p>
-            <p className='resposta'>{resposta}</p>
+          <div key={index} className={`pergunta-container ${selectedQuestion === index ? 'open' : ''}`}>
+            <div className='pergunta-title' onClick={() => openQuestion(index)}>
+              <h6>{pergunta}</h6>
+              <ExpandArrow />
+            </div>
+            <p className='resposta-content'>{resposta}</p>
           </div>
         ))
       }
@@ -60,4 +63,4 @@ const Perguntas = () => {
   )
 }
 
-export default Perguntas;
+export { Perguntas };

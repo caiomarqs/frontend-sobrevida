@@ -1,12 +1,60 @@
-.pergunta {
-    font-weight: bold;
-    cursor: pointer;
+.pergunta-container {
+    .pergunta-title {
+        font-weight: bold;
+        cursor: pointer;
+        height: 5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 0.8px solid $cinza-000;
+
+        h6 {
+            flex: 1;
+            color: $cinza-200;
+            transition: color 0.15s ease-in-out;
+
+            &:hover{
+                color: $preto-000;
+            }
+        }
+
+        svg {
+            transition: ease-in-out .20s transform;
+            transform: rotate(-180deg);
+
+            path {
+                fill: $cinza-200;
+                transition: fill .15s ease-in-out;
+            }
+        }
+    }
+
+    &:hover {
+        .pergunta-title > svg > path {
+            fill: $preto-000;
+        }
+    }
 }
 
-.resposta {
+.resposta-content {
     display: none;
+    transition: display 0.15s ease-in-out;
 }
 
-.open .resposta {
+.open .resposta-content {
     display: block;
+    padding: 2.25rem;
+    @include body1();
+}
+
+.open .pergunta-title h6{
+    color: $preto-000;
+}
+
+.open .pergunta-title svg{
+    transform: rotate(0);
+
+    path{
+        fill: $preto-000;
+    }
 }

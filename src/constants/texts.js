@@ -81,8 +81,9 @@ export default {
     
     'depoimento5.titulo':'Fernanda de Castro',
     'depoimento5.subTitulo': 'Autorizou a doação de órgãos de seu pai Francisco em 2016.',
-    'depoimento5.body': '“Até em um momento tão difícil, meu pai foi solidário e pode ajudar outras famílias a não sentir a dor da perda..pNo momento de tanta tristeza, eu disse sim para a doação de órgãos.”',
+    'depoimento5.body': '“Até em um momento tão difícil, meu pai foi solidário e pode ajudar outras famílias a não sentir a dor da perda. No momento de tanta tristeza, eu disse sim para a doação de órgãos.”',
     
+    'duvidasSection.titulo': 'Dúvidas Frequentes',
     'perguntas.pergunta1': 'O que é doação de órgãos?',
     'perguntas.resposta1': 'A doação de órgãos ou de tecidos é um ato pelo qual manifestamos a vontade de doar uma ou mais partes do nosso corpo para ajudar no tratamento de outras pessoas.',
     'perguntas.pergunta2': 'Quem pode doar?',
