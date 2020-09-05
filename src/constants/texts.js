@@ -99,4 +99,7 @@ export default {
     'perguntas.pergunta7': 'O doador vivo corre risco ao realizar a doação?',
     'perguntas.resposta7': 'O doador está sujeito aos riscos normais de se submeter a uma cirurgia com anestesia geral, mas antes do procedimento são feitos exames a fim de minimizar os riscos.',
 
+    'chatBrandSection.title': 'Converse com Brubles',
+    'chatBrandSection.subTitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'
+
 }

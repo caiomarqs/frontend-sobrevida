@@ -12,10 +12,6 @@
             flex: 1;
             color: $cinza-200;
             transition: color 0.15s ease-in-out;
-
-            &:hover{
-                color: $preto-000;
-            }
         }
 
         svg {
@@ -33,6 +29,11 @@
         .pergunta-title > svg > path {
             fill: $preto-000;
         }
+
+        .pergunta-title h6{
+            color: $preto-000;
+        }
+        
     }
 }
 
