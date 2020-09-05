@@ -1,8 +1,8 @@
 export default {
     'nav.button1': 'Informações',
-    'nav.button2': 'Depoimentos',
-    'nav.button3': 'Dúvidas',
-    'nav.button4': 'Sobre',
+    'nav.button2': 'Estatísticas',
+    'nav.button3': 'Depoimentos',
+    'nav.button4': 'Dúvidas',
     'footer.col2.title': 'sobreVida',
     'footer.col2.li1': 'O Projeto',
     'footer.col2.li2': 'Depoimentos',

@@ -62,21 +62,22 @@ nav.scrolled {
 
     ul > li > a {
         color: $cinza-600;
-        filter: opacity(0.8);
         transition: ease-in 0.15s filter, ease-in 0.15s color;
         margin-right: 16px;
 
         &:hover {
             text-decoration: none;
-            color: $preto-000;
-            filter: opacity(1);
+            color: $vinho-000;
+            
         }
+        
+        
+    }
 
-        &:active {
-            text-decoration: none;
-            color: $preto-000;
-            filter: opacity(1);
-        }
+    .active{
+        text-decoration: none;
+        color: $vinho-000;
+        filter: opacity(1);
     }
 
     .nav-button {
