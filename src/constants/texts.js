@@ -1,3 +1,5 @@
+//No componente Depoimento.js o .p indica um paragrafo.
+
 export default {
     'nav.button1': 'Informações',
     'nav.button2': 'Estatísticas',
@@ -57,27 +59,30 @@ export default {
     'chartsSection.titulo': 'Para quem vão os órgãos e tecidos?',
     'chartsSection.p': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
 
-    'depoimento.titulo': 'Conheça a história dessas famílias',
-    'depoimento.resumo1': '“Me transbordando de orgulho da nossa pequena Elisa!! Ela levou vida a três crianças, e três mães não sentiram a dor da perda de um filho e isso me consola.”',
-    'depoimento.familiar1': 'Fabiana Oliveira autorizou a doação de órgãos de sua filha Elisa em 2019.',
-    'depoimento.completa1': '',
+    'depoimentosSection.titulo': 'Conheça Essas Vidas',
+    'depoimentosSection.subTitulo': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
 
-    'depoimento.resumo2': '“Hoje eu me vejo de uma forma totalmente diferente, sou uma pessoa melhor e muito mais feliz e vou ser eternamente grata a família que em um momento de tanta dor, resolveu me dar essa nova vida.”',
-    'depoimento.familiar2': 'Isabela Menezes de 16 anos realizou seu transplante em 2019.',
-    'depoimento.completa2': '“A exatamente dois anos atrás eu estava passando por um momento muito lindo da minha vida, o meu tão esperado transplante de fígado. É quase inacreditável como eu estou diferente e como a vida cria um novo sentido depois que passamos por uma situação difícil. Hoje eu me vejo de uma forma totalmente diferente, sou uma pessoa melhor e muito mais feliz e vou ser eternamente grata a família que em um momento de tanta dor, resolveu me dar essa nova vida.”',
+    'depoimento1.titulo': 'Fabiana Oliveira',
+    'depoimento1.subTitulo': 'Autoriza a doação de órgãos de sua filha Elisa em 2019.',
+    'depoimento1.body': '“Me transbordando de orgulho da nossa pequena Elisa!! Ela levou vida a três crianças, e três mães não sentiram a dor da perda de um filho e isso me consola.”',
 
-    'depoimento.resumo3': '“Chegou a tão sonhada ligação às 2:30 da manhã: tinha um Rim e Benício era um dos candidatos. A emoção tomou conta de mim e minha voz sumiu naquela hora. O “Sim” de uma família salvou a vida do meu filho.”',
-    'depoimento.familiar3': 'Benício Fonseca de 5 anos realizou seu transplante em 2017.',
-    'depoimento.completa3': '',
+    'depoimento2.titulo': 'Isabela Menezes',
+    'depoimento2.subTitulo': '16 anos, realizou seu transplante em 2019.',
+    'depoimento2.body': '“A exatamente dois anos atrás eu estava passando por um momento muito lindo da minha vida, o meu tão esperado transplante de fígado..pÉ quase inacreditável como eu estou diferente e como a vida cria um novo sentido depois que passamos por uma situação difícil..pHoje eu me vejo de uma forma totalmente diferente, sou uma pessoa melhor e muito mais feliz e vou ser eternamente grata a família que em um momento de tanta dor, resolveu me dar essa nova vida.”',
+    'depoimento2.resumo': '“Hoje eu me vejo de uma forma totalmente diferente, sou uma pessoa melhor e muito mais feliz e vou ser eternamente grata a família que em um momento de tanta dor, resolveu me dar essa nova vida.”',
 
-    'depoimento.resumo4': '“Após um ano de espera, Maria foi agraciada e desde então conhecemos suas risadas altas, seus saltos, suas corridas e brincadeiras sem cansaço. Tudo isso graças a Deus e ao “SIM” de uma família que em um momento tão difícil foi generosa, solidária e nos deu o maior presente: A VIDA.”',
-    'depoimento.familiar4': 'Maria Alice de 8 anos realizou seu transplante em 2018.',
-    'depoimento.completa4': '',
-
-    'depoimento.resumo5': '“Até em um momento tão difícil, meu pai foi solidário e pode ajudar outras famílias a não sentir a dor da perda. No momento de tanta tristeza, eu disse sim para a doação de órgãos.”',
-    'depoimento.familiar5': 'Fernanda de Castro autorizou a doação de órgãos de seu pai Francisco em 2016.',
-    'depoimento.completa5': '',
-
+    'depoimento3.titulo':'Benício Fonseca',
+    'depoimento3.subTitulo': '5 anos, realizou seu transplante em 2017.',
+    'depoimento3.body': '“Chegou a tão sonhada ligação às 2:30 da manhã: tinha um Rim e Benício era um dos candidatos. A emoção tomou conta de mim e minha voz sumiu naquela hora..pO “Sim” de uma família salvou a vida do meu filho.”',
+    
+    'depoimento4.titulo':'Maria Alice',
+    'depoimento4.subTitulo': '8 anos, realizou seu transplante em 2018.',
+    'depoimento4.body': '“Após um ano de espera, Maria foi agraciada e desde então conhecemos suas risadas altas, seus saltos, suas corridas e brincadeiras sem cansaço..pTudo isso graças a Deus e ao “SIM” de uma família que em um momento tão difícil foi generosa, solidária e nos deu o maior presente: A VIDA.”',
+    
+    'depoimento5.titulo':'Fernanda de Castro',
+    'depoimento5.subTitulo': 'Autorizou a doação de órgãos de seu pai Francisco em 2016.',
+    'depoimento5.body': '“Até em um momento tão difícil, meu pai foi solidário e pode ajudar outras famílias a não sentir a dor da perda..pNo momento de tanta tristeza, eu disse sim para a doação de órgãos.”',
+    
     'perguntas.pergunta1': 'O que é doação de órgãos?',
     'perguntas.resposta1': 'A doação de órgãos ou de tecidos é um ato pelo qual manifestamos a vontade de doar uma ou mais partes do nosso corpo para ajudar no tratamento de outras pessoas.',
     'perguntas.pergunta2': 'Quem pode doar?',
