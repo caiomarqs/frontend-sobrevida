@@ -27,6 +27,9 @@ const Nav = () => {
             }
         }
 
+        //Run once
+        handleScroll();
+
         document.addEventListener('scroll', handleScroll)
 
         //willDismout
@@ -42,10 +45,10 @@ const Nav = () => {
                 <LogoFull id="nav-logo" />
             </a>
             <ul className="menu-items">
-                <li><NavLink hash="#doe-section"          value={constants["nav.button1"]} activeDivs={['#doe-section', '#para-quem-section']} /></li>
-                <li><NavLink hash="#charts-section"       value={constants["nav.button2"]} activeDivs={['#charts-section']}/></li>
-                <li><NavLink hash="#depoimentos-section"  value={constants["nav.button3"]} activeDivs={['#depoimentos-section']}/></li>
-                <li><NavLink hash="#duvidas-section"      value={constants["nav.button4"]} activeDivs={['#duvidas-section', '#chat-brand-section']}/></li>
+                <li><NavLink hash="/#doe-section"          value={constants["nav.button1"]} activeDivs={['#doe-section', '#para-quem-section']} /></li>
+                <li><NavLink hash="/#charts-section"       value={constants["nav.button2"]} activeDivs={['#charts-section']}/></li>
+                <li><NavLink hash="/#depoimentos-section"  value={constants["nav.button3"]} activeDivs={['#depoimentos-section']}/></li>
+                <li><NavLink hash="/#duvidas-section"      value={constants["nav.button4"]} activeDivs={['#duvidas-section', '#chat-brand-section']}/></li>
             </ul>
             <Button className="solid-button-primary nav-button" value="seja um doador" />
         </nav>

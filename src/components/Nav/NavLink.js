@@ -17,10 +17,12 @@ const NavLink = ({ hash, value, className, activeDivs, ...otherProps }) => {
                 document.querySelector(activeDivs[activeDivs.length - 1]).offsetTop 
                 + 
                 document.querySelector(activeDivs[activeDivs.length - 1]).offsetHeight
-            );
+            )
+            
+            const navBottomPosition = window.scrollY + 96
 
             //Enquanto tiver dentro ele seta a classe como ativa
-            if (window.scrollY >= topPosition && window.scrollY <= bottomPosition) {
+            if (navBottomPosition >= topPosition && navBottomPosition <= bottomPosition) {
                 setActive('active')
             }
             else {
@@ -32,14 +34,10 @@ const NavLink = ({ hash, value, className, activeDivs, ...otherProps }) => {
         document.addEventListener('scroll', getActive)
 
 
-        return (
-            document.addEventListener('scroll', getActive)
-        )
+        return document.addEventListener('scroll', getActive)
     }, [hash, activeDivs])
 
-    return (
-        <a className={thisClassName + active} href={hash} {...otherProps}>{value}</a>
-    )
+    return  <a className={thisClassName + active} href={hash} {...otherProps}>{value}</a>
 }
 
 export { NavLink }

@@ -1,3 +1,38 @@
-#charts-section{
-    min-height: 37.5rem;
+#charts-section {
+    min-height: 46rem;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        min-height: 46rem;
+
+        #charts-content{
+            flex: 1;
+            padding: 0 0.75rem 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #charts-text{
+            flex: 1;
+            padding: 0 0 0 0.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h3{
+                min-height: 6rem;
+                margin-bottom: 1rem;
+            }
+
+            p{
+                @include body1();
+            }
+        }
+
+    }
 }
