@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { PrincipalSection } from './HomeSections/PrincipalSection'
 import { DoeSection } from './HomeSections/DoeSection'
@@ -9,6 +9,11 @@ import { DuvidasSection } from './HomeSections/DuvidasSection'
 import { ChatBrandSection } from './HomeSections/ChatBrandSection'
 
 const Home = () => {
+    
+    useEffect(() => {
+        document.title = 'sobreVida | Home'
+    }, [])
+
     return (
         <>
             <PrincipalSection />
