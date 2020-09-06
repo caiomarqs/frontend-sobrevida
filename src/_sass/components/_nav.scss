@@ -6,7 +6,8 @@ nav {
     align-items: center;
     padding: 0 2rem;
     transition: ease-in 0.15s background-color;
-
+    @include noselect();
+    
     .navbar-brand {
         display: flex;
         flex-direction: row;
