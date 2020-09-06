@@ -4,15 +4,23 @@ import { Bar } from 'react-chartjs-2';
 import constants from '../../constants/texts'
 
 const orgao = [
-    constants['chart.button1'], 
-    constants['chart.button2'], 
-    constants['chart.button3'], 
-    constants['chart.button4'], 
-    constants['chart.button5'], 
+    constants['chart.button1'],
+    constants['chart.button2'],
+    constants['chart.button3'],
+    constants['chart.button4'],
+    constants['chart.button5'],
     constants['chart.button6']
-];
+]
 const nTransp = [148, 979, 35, 61, 2409, 3963];
 const listEspera = [266, 990, 209, 363, 27027, 12234];
+const suggests = [
+    { min: 0, max: 0 },
+    { min: 950, max: 1000 },
+    { min: 0, max: 0 },
+    { min: 0, max: 0 },
+    { min: 0, max: 0 },
+    { min: 0, max: 0 }
+]
 
 const initialChartData = {
     labels: [orgao[0]],
@@ -27,12 +35,15 @@ const initialChartData = {
             data: [listEspera[0]],
             backgroundColor: '#AA0034'
         }
-    ]
+    ],
+
 }
 
 const Chart = (props) => {
 
     const [chartData, setChartData] = useState(initialChartData)
+    const [min, setMin] = useState(suggests[0].min)
+    const [max, setMax] = useState(suggests[0].max)
 
     const changeOrgao = (i, j, k) => {
 
@@ -52,12 +63,15 @@ const Chart = (props) => {
             ]
         }
 
+        setMin(suggests[i].min)
+        setMax(suggests[i].max)
+
 
         const element = document.querySelector(`#orgao-btn-${i}`)
         const allBtns = document.querySelectorAll('.orgao-btn');
 
         allBtns.forEach(a => a.classList.remove('active'))
-        
+
         element.classList.add('active')
 
         setChartData(chartData)
@@ -82,7 +96,15 @@ const Chart = (props) => {
                             text: constants['chart.titulo']
                         },
                         responsive: true,// matem no tamanho da div pai
-                        maintainAspectRatio: false //não destorce o canvas renderizado
+                        maintainAspectRatio: false, //não destorce o canvas renderizado
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    suggestedMin: min,
+                                    suggestedMax: max
+                                }
+                            }]
+                        }
                     }
                     }
                 />

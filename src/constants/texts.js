@@ -46,7 +46,7 @@ export default {
     'informacao.titulo6': 'Morte encefálica',
     'informação.conteudo6': 'A morte encefálica é a perda completa e irreversível das funções cerebrais. No Brasil, o diagnóstico de morte encefálica é regulamentado por uma Resolução do Conselho Federal de Medicina, que determina serem necessários dois exames clínicos realizados por médicos diferentes e um exame complementar (gráfico, metabólico ou de imagem).',
 
-    'chart.titulo': 'Comparação entre Transplantes e Pacientes ativos por Lista de Espera.',
+    'chart.titulo': 'Transplantes e Pacientes ativos por Lista de Espera - 2020(1ºSem)',
     'chart.label1': 'Número de transplantes',
     'chart.label2': 'Pacientes por lista de espera',
     'chart.button1': 'Coração',
