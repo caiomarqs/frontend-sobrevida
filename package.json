@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "cross-env INLINE_RUNTIME_CHUNK=false react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },  
+    "start": "npx react-scripts start",
+    "build": "cross-env INLINE_RUNTIME_CHUNK=false npx react-scripts build",
+    "test": "npx react-scripts test",
+    "eject": "npx react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

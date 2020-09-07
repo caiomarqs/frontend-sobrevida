@@ -5,19 +5,22 @@ import { chatReducer } from '../reducers'
 const ChatContext = createContext()
 
 const INITAL_STATE = {
-    isOpen: false
+    isOpen: false,
+    allUserMensages: []
 }
 
 const CHAT_ACTIONS = {
-    OPEN: 'OPEN'
+    OPEN: 'OPEN',
+    SEND_MENSAGE: 'SEND_MENSAGE'
 }
+
 
 const ChatProvider = (props) => {
 
     const [chatState, dispatch] = useReducer(chatReducer, INITAL_STATE)
 
     return (
-        <ChatContext.Provider value={{ chatState, dispatch, CHAT_ACTIONS }}>
+        <ChatContext.Provider value={{ chatState, dispatch }}>
             {props.children}
         </ChatContext.Provider>
     )
