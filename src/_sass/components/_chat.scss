@@ -22,6 +22,7 @@
         border-radius: 4px;
         position: relative;
         z-index: 1010;
+        transition: filter 0.15s ease-in-out;
 
         > svg > path {
             filter: opacity(0.8);
@@ -48,8 +49,8 @@
         border: solid 0.05rem $cinza-200;
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
-        transition: margin 0.2s ease-in-out, visibility 0.2s ease-in-out, filter .2s ease-in-out;
-        background-color: rgba(255, 255, 255, 0.60);
+        transition: margin 0.2s ease-in-out, visibility 0.2s ease-in-out, filter 0.2s ease-in-out;
+        background-color: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(0.25rem);
         z-index: 1000;
 
@@ -68,4 +69,119 @@
             margin: 0 -4px 0 0;
         }
     }
+}
+
+.chat-container {
+    width: 22.5rem;
+    background-color: $branco-000;
+    border: solid 0.8px $cinza-000;
+    border-radius: 0.25rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    height: 32rem;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+    transition-delay: 1s;
+    display: flex;
+    flex-direction: column;
+
+    .chat-header,
+    .chat-footer {
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // justify-content: center;
+    }
+
+    .chat-header {
+        border-bottom: 0.05rem solid $cinza-000;
+        padding: 1rem;
+        @include noselect();
+
+        span {
+            width: 100%;
+            @include links();
+            color: $cinza-400;
+            text-align: center;
+        }
+
+        svg {
+            position: absolute;
+
+            path {
+                transition: fill 0.15s ease-in-out;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                path {
+                    fill: $preto-000;
+                }
+            }
+        }
+    }
+
+    .chat-footer {
+        border-top: 0.05rem solid $cinza-000;
+        padding: .5rem;
+
+        input[type="text"]{
+            flex: 1;
+            min-height: 3rem;
+            border-radius: 0.25rem;
+            border: 0.05rem solid $cinza-000;
+            padding: 0 .5rem;
+            transition: border .15s ease-in-out;
+            @include body1();
+            
+
+            &:focus{
+                border: 0.05rem solid $cinza-400;
+                outline: none;
+            }
+        }
+
+        #send-button {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $vinho-000;
+            border-radius: 4px;
+            position: relative;
+            z-index: 1010;
+            border: none;
+            margin-left: .5rem;
+            transition: filter 0.15s ease-in-out;
+        
+            &:hover {
+                cursor: pointer;
+                filter: saturate(0.8);
+    
+                > svg > path {
+                    filter: opacity(1);
+                }
+            }
+        }
+
+        .disabled{
+            filter: saturate(0.8);
+            cursor: default !important;
+        }
+    }
+
+    .chat-dialog {
+        flex: 1;
+    }
+}
+
+.open {
+    transform: scaleY(1);
 }

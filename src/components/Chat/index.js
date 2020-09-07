@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
 import { ChatButton } from './ChatButton';
+import { ChatContainer } from './ChatContainer';
 import { ChatContext } from '../../contexts';
 
 const Chat = (props) => {
@@ -10,7 +11,7 @@ const Chat = (props) => {
     return (
         (chatState.isOpen === false)
             ? <ChatButton />
-            : <></>
+            : <ChatContainer />
     )
 }
 
