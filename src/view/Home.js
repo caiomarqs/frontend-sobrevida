@@ -8,25 +8,27 @@ import { ChartsSection } from './HomeSections/ChartsSections'
 import { DepoimentosSection } from './HomeSections/DepoimentosSection'
 import { DuvidasSection } from './HomeSections/DuvidasSection'
 import { ChatBrandSection } from './HomeSections/ChatBrandSection'
+import { ChatProvider } from '../contexts'
 
 
 const Home = () => {
-    
+
     useEffect(() => {
         document.title = 'sobreVida | Home'
     }, [])
 
     return (
         <>
-            <Chat />
-            <PrincipalSection />
-            <DoeSection />
-            <ParaQuemSection />
-            <ChartsSection />
-            <DepoimentosSection />
-            <DuvidasSection />
-            <ChatBrandSection />
-
+            <ChatProvider>
+                <Chat />
+                <PrincipalSection />
+                <DoeSection />
+                <ParaQuemSection />
+                <ChartsSection />
+                <DepoimentosSection />
+                <DuvidasSection />
+                <ChatBrandSection />
+            </ChatProvider>
         </>
     )
 }
