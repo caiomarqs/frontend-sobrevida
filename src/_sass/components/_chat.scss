@@ -128,19 +128,18 @@
 
     .chat-footer {
         border-top: 0.05rem solid $cinza-000;
-        padding: .5rem;
+        padding: 0.5rem;
 
-        input[type="text"]{
+        input[type="text"] {
             flex: 1;
             min-height: 3rem;
             border-radius: 0.25rem;
             border: 0.05rem solid $cinza-000;
-            padding: 0 .5rem;
-            transition: border .15s ease-in-out;
+            padding: 0 0.5rem;
+            transition: border 0.15s ease-in-out;
             @include body1();
-            
 
-            &:focus{
+            &:focus {
                 border: 0.05rem solid $cinza-400;
                 outline: none;
             }
@@ -158,20 +157,20 @@
             position: relative;
             z-index: 1010;
             border: none;
-            margin-left: .5rem;
+            margin-left: 0.5rem;
             transition: filter 0.15s ease-in-out;
-        
+            outline: none;
             &:hover {
                 cursor: pointer;
                 filter: saturate(0.8);
-    
+
                 > svg > path {
                     filter: opacity(1);
                 }
             }
         }
 
-        .disabled{
+        .disabled {
             filter: saturate(0.8);
             cursor: default !important;
         }
@@ -179,6 +178,68 @@
 
     .chat-dialog {
         flex: 1;
+        overflow-y: scroll;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+
+        >span{
+            width: 100%;
+            text-align: center;
+            @include caption();
+            @include noselect();
+            margin: .5rem 0 1rem 0;
+            color: $cinza-400;
+        }
+
+        &::-webkit-scrollbar {
+            width: .5rem;
+        }
+        &::-webkit-scrollbar-track {
+            background: $branco-000;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $cinza-000;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $cinza-200;
+        }
+
+        .dialog-container{
+            min-width: 7rem;
+            max-width: 18rem;
+            height: fit-content;
+            width: fit-content;
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: .25rem;
+            margin-bottom: .5rem;
+
+            span{
+                @include links();
+                font-weight: bolder;
+                text-transform: uppercase;
+                margin-bottom: 0.75rem;
+                height: 1.0625rem;
+            }
+
+            p{
+                @include body1();
+                line-break: anywhere;
+                height: fit-content;
+            }
+        }
+
+        .dialog-container.bot{
+            background-color: $cinza-000;
+        }
+
+        .dialog-container.user{
+            background-color: $vinho-p-000;
+            align-self: flex-end;
+            align-items: flex-end;
+        }
     }
 }
 

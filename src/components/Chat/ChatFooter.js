@@ -9,11 +9,11 @@ const ChatFooter = () => {
     const { dispatch } = useContext(ChatContext)
     const [textInput, setTextInput] = useState('') //Não é recomendavel usar no reducer, pois desencadea varias chadamadas do reducer
 
-    
+
     //Manda a mensagem para o contexto, e dialogo vai retorna a mensagem
     const handleSendMensage = useCallback((userMensage) => {
-        
-        dispatch({ type: CHAT_ACTIONS.SEND_MENSAGE, payload: userMensage })
+
+        dispatch({ type: CHAT_ACTIONS.SEND_MENSAGE, payload: { user: 'Você', value: userMensage } })
         document.querySelector('#chat-input').value = ''
         setTextInput('')
 
@@ -32,9 +32,11 @@ const ChatFooter = () => {
                 onChange={(e) => { setTextInput(e.target.value) }}
                 placeholder='Escreva sua menssagem!'
                 onKeyDown={(e) => enterKeyPress(e, textInput)}
+                autoComplete='off'
             />
             <button
                 id="send-button"
+                type='submit'
                 className={(textInput !== '') ? '' : 'disabled'}
                 disabled={(textInput !== '') ? false : true}
                 onClick={() => handleSendMensage(textInput)}

@@ -6,7 +6,7 @@ const ChatContext = createContext()
 
 const INITAL_STATE = {
     isOpen: false,
-    allUserMensages: []
+    allMensages: []
 }
 
 const CHAT_ACTIONS = {

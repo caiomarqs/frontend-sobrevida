@@ -10,8 +10,8 @@ const chatReducer = (state, action) => {
             return { ...state, userMensage: action.payload }
 
         case CHAT_ACTIONS.SEND_MENSAGE:
-            const lastMensages = state.allUserMensages
-            return { ...state, allUserMensages: [...lastMensages, action.payload] }
+            const lastMensages = state.allMensages
+            return { ...state, allMensages: [...lastMensages, action.payload] }
 
         default:
             return state
