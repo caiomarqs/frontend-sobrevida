@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react'
 
-import { ChatContext, CHAT_ACTIONS } from '../../contexts'
-import { CloseIcon } from '../Icons'
-import constants from '../../constants/texts'
+import { ChatContext } from '../../contexts'
+import { ChatHeader } from './ChatHeader'
 import { ChatFooter } from './ChatFooter'
+import { ChatDialog } from './ChatDialog'
+
 
 const ChatContainer = () => {
 
     const [bottomPosition, setBottomPosition] = useState({})
-    const { chatState, dispatch } = useContext(ChatContext)
+    const { chatState } = useContext(ChatContext)
 
     useEffect(() => {
         let monted = true
@@ -35,13 +36,8 @@ const ChatContainer = () => {
 
     return (
         <div id='chat-container' style={bottomPosition} className={`chat-container ${(chatState.isOpen === true ? 'open' : '')}`}>
-            <div className='chat-header'>
-                <CloseIcon onClick={() => { dispatch({ type: CHAT_ACTIONS.OPEN }) }} />
-                <span>{constants['chatContainer.title']}</span>
-            </div>
-            <div className='chat-dialog'>
-
-            </div>
+            <ChatHeader />
+            <ChatDialog />
             <ChatFooter />
         </div>
     )

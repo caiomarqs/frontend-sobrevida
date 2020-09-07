@@ -3,15 +3,10 @@ import React, { useEffect, useState, useContext } from 'react'
 import { ChatIcon } from '../Icons';
 import { ChatContext, CHAT_ACTIONS } from '../../contexts'
 
-
-
 const ChatButton = (props) => {
-
-
 
     const [bottomPosition, setBottomPosition] = useState({})
     const { dispatch } = useContext(ChatContext)
-
 
     useEffect(() => {
         //Controlador para apagar Listener/Promisse quando o componente for desmontado, 

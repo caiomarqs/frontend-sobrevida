@@ -15,12 +15,13 @@ const ChatFooter = () => {
         
         dispatch({ type: CHAT_ACTIONS.SEND_MENSAGE, payload: userMensage })
         document.querySelector('#chat-input').value = ''
+        setTextInput('')
 
     }, [dispatch])
 
     //Verifica se o usuario aperta enter no input
     const enterKeyPress = (e, userMensage) => {
-        if (e.keyCode === 13 && userMensage !== '') handleSendMensage()
+        if (e.keyCode === 13 && userMensage !== '') handleSendMensage(userMensage)
     }
 
     return (
