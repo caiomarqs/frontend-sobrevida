@@ -10,6 +10,18 @@ const ChatContainer = () => {
     const [userMensage, setUserMensage] = useState('')
     const { chatState, dispatch } = useContext(ChatContext)
 
+    //Manda a mensagem para o dialago
+    const handleSendMensage = useCallback((userMensage) => {
+        console.log(userMensage)
+        document.querySelector('#chat-input').value = ''
+        setUserMensage('')
+    }, [])
+
+    //Verifica se o usuario aperta enter no input
+    const enterKeyPress = useCallback((e, userMensage) => {
+        if (e.keyCode === 13 && userMensage !== '') handleSendMensage(userMensage)
+    }, [handleSendMensage])
+
     useEffect(() => {
         let monted = true
 
@@ -21,7 +33,7 @@ const ChatContainer = () => {
 
             setBottomPosition({ bottom: bottomValue })
         }
-
+        stopPosition()
 
         if (monted === true) document.addEventListener('scroll', stopPosition)
 
@@ -32,12 +44,6 @@ const ChatContainer = () => {
 
     }, [])
 
-    const handleSendMensage = useCallback((userMensage) => {
-        console.log(userMensage)
-        document.querySelector('#chat-input').value = ''
-        setUserMensage('') 
-               
-    }, [])
 
     return (
         <div id='chat-container' style={bottomPosition} className={`chat-container ${(chatState.isOpen === true ? 'open' : '')}`}>
@@ -49,11 +55,12 @@ const ChatContainer = () => {
 
             </div>
             <div className='chat-footer'>
-                <input 
-                    id='chat-input' 
-                    type='text' 
-                    onChange={(e) => setUserMensage(e.target.value)} 
-                    placeholder='Escreva sua menssagem!' 
+                <input
+                    id='chat-input'
+                    type='text'
+                    onChange={(e) => setUserMensage(e.target.value)}
+                    placeholder='Escreva sua menssagem!'
+                    onKeyDown={(e) => enterKeyPress(e, userMensage)}
                 />
                 <button
                     id="send-button"
@@ -61,6 +68,7 @@ const ChatContainer = () => {
                     className={(userMensage !== '') ? '' : 'disabled'}
                     disabled={(userMensage !== '') ? false : true}
                     onClick={() => handleSendMensage(userMensage)}
+
                 >
                     <SendIcon />
                 </button>

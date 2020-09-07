@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = ({ className, value, ...otherProps}) => {
-    
+const Button = ({ className, value, ...otherProps }) => {
+
     const propsClassNames = className === undefined ? '' : className
 
     return (

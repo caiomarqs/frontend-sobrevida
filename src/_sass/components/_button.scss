@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     letter-spacing: 0.0313rem;
+    @include noselect();
     
     span{
         width: 100%;
@@ -74,4 +75,9 @@
         background-color: $vermelho-000;
         color: $branco-000;
     }
+}
+
+.custom-button.disabled{
+    filter: saturate(0.8);
+    cursor: default !important;
 }
