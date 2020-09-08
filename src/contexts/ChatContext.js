@@ -6,12 +6,15 @@ const ChatContext = createContext()
 
 const INITAL_STATE = {
     isOpen: false,
-    allMensages: []
+    allMessages: [],
+    loadingMessage: false
 }
 
 const CHAT_ACTIONS = {
     OPEN: 'OPEN',
-    SEND_MENSAGE: 'SEND_MENSAGE'
+    SEND_MESSAGE: 'SEND_MESSAGE',
+    INIT_SEND_MESSAGE: 'INIT_SEND_MESSAGE',
+    END_SEND_MESSAGE: 'END_SEND_MESSAGE'
 }
 
 

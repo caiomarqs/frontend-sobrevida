@@ -4,6 +4,7 @@ import { ChatContext, CHAT_ACTIONS } from '../../contexts'
 import { SendIcon } from '../Icons'
 
 
+
 const ChatFooter = () => {
 
     const { dispatch } = useContext(ChatContext)
@@ -11,17 +12,15 @@ const ChatFooter = () => {
 
 
     //Manda a mensagem para o contexto, e dialogo vai retorna a mensagem
-    const handleSendMensage = useCallback((userMensage) => {
-
-        dispatch({ type: CHAT_ACTIONS.SEND_MENSAGE, payload: { user: 'Você', value: userMensage } })
+    const handleSendMessage = useCallback((userMessage) => {
+        dispatch({ type: CHAT_ACTIONS.SEND_MESSAGE, payload: [{ user: 'bot', value: userMessage }, { user: 'Você', value: userMessage }] })
         document.querySelector('#chat-input').value = ''
         setTextInput('')
-
     }, [dispatch])
 
     //Verifica se o usuario aperta enter no input
-    const enterKeyPress = (e, userMensage) => {
-        if (e.keyCode === 13 && userMensage !== '') handleSendMensage(userMensage)
+    const enterKeyPress = (e, userMessage) => {
+        if (e.keyCode === 13 && userMessage !== '') handleSendMessage(userMessage)
     }
 
     return (
@@ -39,7 +38,7 @@ const ChatFooter = () => {
                 type='submit'
                 className={(textInput !== '') ? '' : 'disabled'}
                 disabled={(textInput !== '') ? false : true}
-                onClick={() => handleSendMensage(textInput)}
+                onClick={() => handleSendMessage(textInput)}
             >
                 <SendIcon />
             </button>
