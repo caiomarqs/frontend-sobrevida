@@ -226,8 +226,6 @@
 
             p{
                 @include body1();
-                line-break: anywhere;
-                height: fit-content;
             }
         }
 

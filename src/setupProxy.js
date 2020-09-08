@@ -6,7 +6,7 @@ module.exports = function (app) {
     app.use(
         ['/watson', '/watson?question'],
         createProxyMiddleware({
-            target: 'http://localhost:8080',
+            target: process.env.SERVER_URL,
         })
     );
 };

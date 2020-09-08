@@ -15,7 +15,10 @@ const chatReducer = (state, action) => {
 
         case CHAT_ACTIONS.END_SEND_MESSAGE:
             return { ...state, loadingMessage: false }
-            
+
+        case CHAT_ACTIONS.CLEAR_CONVERSATION:
+            return { ...state, allMessages: [] }
+
         default:
             return state
     }
