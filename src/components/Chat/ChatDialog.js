@@ -28,13 +28,11 @@ const ChatDialog = (props) => {
                 setLoading(false)
                 let JSONresponse = JSON.parse(JSON.stringify(response))
                 dispatch({ type: CHAT_ACTIONS.SEND_MESSAGE, payload: [{ user: 'bot', value: JSONresponse.data["output"]["text"] }] })
-
             }).catch(err => {
                 setLoading(false)
                 dispatch({ type: CHAT_ACTIONS.SEND_MESSAGE, payload: [{ user: 'bot', value: "Não estou conseguindo responder no momento" }] })
             })
         }
-       
         else {
             setLoading(false)
         }
