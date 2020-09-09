@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ChatContext, CHAT_ACTIONS } from '../../contexts'
 import axios from 'axios'
+
+import { ChatContext, CHAT_ACTIONS } from '../../contexts'
+import { RenderMD } from '../RenderMD'
+
 
 const ChatDialog = (props) => {
 
     const { chatState, dispatch } = useContext(ChatContext)
     const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
         if (chatState.allMessages.length === 0) {
@@ -54,7 +58,7 @@ const ChatDialog = (props) => {
                     return (
                         <div key={index} className={`dialog-container ${message.user !== 'bot' ? 'user' : 'bot'}`}>
                             <span>{message.user}</span>
-                            <p>{message.value}</p>
+                            <RenderMD value={message.value[0]} />
                         </div>
                     )
                 })
