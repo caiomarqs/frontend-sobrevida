@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 
 import { ChatContext, CHAT_ACTIONS } from '../../contexts'
-import { RenderMD } from '../RenderMD'
+import { DialogContainer } from './DialogContainer'
 
 
 const ChatDialog = (props) => {
@@ -22,7 +22,7 @@ const ChatDialog = (props) => {
 
                     dispatch({
                         type: CHAT_ACTIONS.SEND_MESSAGE,
-                        payload: [{ user: 'bot', value: JSONresponse.data["output"]["text"] }]
+                        payload: [{ user: 'bot', value: JSONresponse.data["output"]["text"][0] }]
                     })
 
                 })
@@ -51,21 +51,17 @@ const ChatDialog = (props) => {
 
     return (
         <div className='chat-dialog' id='chat-dialog'>
-            {loading
-                ? <span>Carregando...</span>
-
-                : chatState.allMessages.map((message, index) => {
-                    return (
-                        <div key={index} className={`dialog-container ${message.user !== 'bot' ? 'user' : 'bot'}`}>
-                            <span>{message.user}</span>
-                            <RenderMD value={message.value[0]} />
-                        </div>
-                    )
-                })
+            {
+                loading
+                    ? <span>Carregando...</span>
+                    : chatState.allMessages.map((message, index) => {
+                        return <DialogContainer message={message} key={index} />
+                    })
             }
-            {chatState.loadingMessage
-                ? <span>Carregando...</span>
-                : null
+            {
+                chatState.loadingMessage
+                    ? <span>Repondendo...</span>
+                    : null
             }
         </div>
     )

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 
 import { ChatIcon } from '../Icons';
 import { ChatContext, CHAT_ACTIONS } from '../../contexts'
+import constants from '../../constants/texts'
 
 const ChatButton = (props) => {
 
@@ -45,7 +46,7 @@ const ChatButton = (props) => {
                 <ChatIcon />
             </span>
             <span className='chat-button-text'>
-                <span>Converse com Brubles</span>
+                <span>{constants["chatButton.text"]}</span>
             </span>
         </div>
     )

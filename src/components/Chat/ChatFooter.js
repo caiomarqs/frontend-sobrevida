@@ -27,7 +27,7 @@ const ChatFooter = () => {
 
                     const botMessage = JSONresponse.data["output"]["text"].length === 0
                         ? 'Eu não entendi. Você pode tentar reformular a frase.'
-                        : JSONresponse.data["output"]["text"]
+                        : JSONresponse.data["output"]["text"][0]
 
 
                     dispatch({
