@@ -27,4 +27,21 @@
             margin-bottom: 5.5rem;
         }
     }
+
+
+    @media (max-width: $max-md){
+        .container{
+            padding: 3rem 1.5rem 6rem 1.5rem;
+        }
+    }
+
+    @media (max-width: $max-xs){
+        .container{
+            padding-top: 2rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
 }

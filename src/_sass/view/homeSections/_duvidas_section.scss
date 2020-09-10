@@ -8,4 +8,10 @@
             margin-bottom: 8.75rem;
         }
     }
+
+    @media (max-width: $max-md){
+        .container{
+            padding: 6rem 1.5rem;
+        }
+    }
 }

@@ -2,7 +2,7 @@
     .pergunta-title {
         font-weight: bold;
         cursor: pointer;
-        height: 5rem;
+        min-height: 5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -15,7 +15,7 @@
         }
 
         svg {
-            transition: ease-in-out .20s transform;
+            transition: ease-in-out 0.2s transform;
             transform: rotate(-180deg);
             z-index: 0;
             position: relative;
@@ -23,7 +23,7 @@
             path {
                 position: relative;
                 fill: $cinza-200;
-                transition: fill .15s ease-in-out;
+                transition: fill 0.15s ease-in-out;
                 z-index: 0;
             }
         }
@@ -34,10 +34,19 @@
             fill: $preto-000;
         }
 
-        .pergunta-title h6{
+        .pergunta-title h6 {
             color: $preto-000;
         }
-        
+    }
+
+    @media (max-width: $max-md) {
+        .pergunta-title {
+            padding: 1.5rem 0;
+
+            svg {
+                margin-left: 1rem;
+            }
+        }
     }
 }
 
@@ -50,16 +59,24 @@
     display: block;
     padding: 2.25rem;
     @include body1();
+
+    @media (max-width: $max-md){
+        padding: 2.25rem 2rem;
+    }
+
+    @media (max-width: $max-xs){
+        padding: 2.25rem 1rem;
+    }
 }
 
-.open .pergunta-title h6{
+.open .pergunta-title h6 {
     color: $preto-000;
 }
 
-.open .pergunta-title svg{
+.open .pergunta-title svg {
     transform: rotate(0);
 
-    path{
+    path {
         fill: $preto-000;
     }
 }
