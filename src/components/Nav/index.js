@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import constants from '../../constants/texts'
-import { NavLink } from './NavLink'
 import { Button } from '../Button'
 import { LogoFull } from '../Icons'
+import { NavLinksContainer } from './NavLinksContainer'
+import { HambugerMenu } from '../OverMenu/HambugerMenu'
 
 const Nav = () => {
 
@@ -44,13 +44,9 @@ const Nav = () => {
             <a className="navbar-brand" href="/">
                 <LogoFull id="nav-logo" />
             </a>
-            <ul className="menu-items">
-                <li><NavLink hash="/#doe-section"          value={constants["nav.button1"]} activeDivs={['#doe-section', '#para-quem-section']} /></li>
-                <li><NavLink hash="/#charts-section"       value={constants["nav.button2"]} activeDivs={['#charts-section']}/></li>
-                <li><NavLink hash="/#depoimentos-section"  value={constants["nav.button3"]} activeDivs={['#depoimentos-section']}/></li>
-                <li><NavLink hash="/#duvidas-section"      value={constants["nav.button4"]} activeDivs={['#duvidas-section', '#chat-brand-section']}/></li>
-            </ul>
-            <Button className="solid-button-primary nav-button" value="seja um doador" />
+            <NavLinksContainer />
+            <Button id="nav-button" className="solid-button-primary nav-button" value="seja um doador" />
+            <HambugerMenu />
         </nav>
     )
 }

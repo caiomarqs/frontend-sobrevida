@@ -42,7 +42,7 @@ const ChatDialog = (props) => {
         }
 
         //Quando tiver uma atualização nas mensagens, ira rolar o dialago
-        var thisObject = document.querySelector("#chat-dialog");
+        const thisObject = document.querySelector("#chat-dialog");
         thisObject.scrollTop = thisObject.scrollHeight;
 
     }, [chatState.allMessages, dispatch])

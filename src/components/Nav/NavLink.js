@@ -37,7 +37,7 @@ const NavLink = ({ hash, value, className, activeDivs, ...otherProps }) => {
         return document.addEventListener('scroll', getActive)
     }, [hash, activeDivs])
 
-    return  <a className={thisClassName + active} href={hash} {...otherProps}>{value}</a>
+    return  <a className={"menu-item-default " + thisClassName + active} href={hash} {...otherProps}>{value}</a>
 }
 
 export { NavLink }

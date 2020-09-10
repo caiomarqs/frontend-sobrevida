@@ -7,12 +7,16 @@ nav {
     padding: 0 2rem;
     transition: ease-in 0.15s background-color;
     @include noselect();
-    
+
     .navbar-brand {
         display: flex;
         flex-direction: row;
         align-items: center;
 
+        svg#nav-logo {
+            width: 14.125rem;
+            height: 2.5rem;
+        }
         #nav-logo > path {
             fill: $branco-000;
             transition: ease-in 0.15s fill;
@@ -48,8 +52,49 @@ nav {
         @include links();
     }
 
+    .menu-items-mobile {
+        display: none;
+    }
+
     .nav-button {
         display: none;
+    }
+
+    @media (max-width: $max-md) {
+        justify-content: space-between;
+
+        #nav-button {
+            display: none;
+        }
+
+        .menu-items {
+            display: none;
+        }
+
+        .menu-items-mobile {
+            display: flex;
+        }
+    }
+
+    @media (max-width: $max-xs) {
+        padding: 0 1rem;
+
+        .navbar-brand {
+            svg#nav-logo {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            #nav-logo > path {
+                display: none;
+
+                &:nth-of-type(11),
+                &:nth-of-type(12),
+                &:nth-of-type(13) {
+                    display: block;
+                }
+            }
+        }
     }
 }
 
@@ -69,13 +114,10 @@ nav.scrolled {
         &:hover {
             text-decoration: none;
             color: $vinho-000;
-            
         }
-        
-        
     }
 
-    .active{
+    .active {
         text-decoration: none;
         color: $vinho-000;
         filter: opacity(1);
@@ -87,3 +129,4 @@ nav.scrolled {
         transition: ease-in 0.15s display, ease-in 0.15s filter;
     }
 }
+
