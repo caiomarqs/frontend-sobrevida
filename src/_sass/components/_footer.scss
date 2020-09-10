@@ -1,5 +1,5 @@
 footer {
-    height: 28.375rem;
+    min-height: 28.375rem;
     background-color: $vinho-000;
     @include noselect();
 
@@ -55,8 +55,8 @@ footer {
 
                     a {
                         color: $cinza-000;
-                        transition: color ease-in-out .15s;
-                        &:hover{
+                        transition: color ease-in-out 0.15s;
+                        &:hover {
                             text-decoration: none;
                             color: $branco-000;
                         }
@@ -68,14 +68,14 @@ footer {
                 justify-content: center;
                 align-items: center;
 
-                h6{
+                h6 {
                     color: $branco-000;
                     min-height: 4.25rem;
                     margin-bottom: 2rem;
                     text-align: center;
                 }
 
-                .footer-button{
+                .footer-button {
                     width: 100%;
                 }
             }
@@ -96,4 +96,75 @@ footer {
             }
         }
     }
+    
+
+
+    @media (max-width: $max-md) {
+        .container {
+            #footer-content {
+                padding: 8rem 0 0 0;
+                min-height: 40rem;
+                flex-flow: row wrap-reverse; // flex-direction: row-reverse; // flex-wrap: wrap-reverse; //-> importante para quebra a linha
+
+                .footer-col {
+                    flex: 1;
+
+                    &:last-of-type {
+                        padding-left: 0.75rem;
+                        padding-right: 0.75rem;
+                        padding-bottom: 2rem;
+                        align-self: stretch;
+                        flex: 1;
+                        flex-basis: 100%;
+                    
+                    }
+
+                    &:first-of-type {
+                        padding: 5.25rem 3rem;
+                        
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                #footer-col-1,
+                #footer-col-2,
+                #footer-col-3 {
+                    padding-bottom: 5.25rem;
+                    flex-basis: calc(100% / 3);
+                }
+
+                #footer-col-4{
+                    .footer-button {
+                        width: 10.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $max-sm) {
+        .container {
+            #footer-content {
+                flex-direction: row;
+                
+                #footer-col-1{
+                    flex: 1;
+                    flex-basis: 100%;
+                }
+
+                #footer-col-1{
+                    padding:  0 0 5.25rem 0;
+                }
+                #footer-col-2,
+                #footer-col-3 {
+                    flex: 0;
+                    flex-basis: calc(100% / 2);
+                }
+            }
+        }
+    }
+
+   
 }
