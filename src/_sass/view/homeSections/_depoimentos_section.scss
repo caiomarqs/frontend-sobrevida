@@ -1,43 +1,49 @@
-#depoimentos-section{
+#depoimentos-section {
     min-height: 81rem;
     background-color: $cinza-p-000;
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 6rem 0;
 
-        h3{
+        h3 {
             color: $vinho-000;
             min-height: 2.625rem;
             margin-bottom: 1.25rem;
             max-width: 34.5rem;
-            text-align: center;    
+            text-align: center;
         }
 
-        >p{
+        > p {
             @include sub1();
             min-height: 2.625rem;
             max-width: 34.5rem;
             text-align: center;
-            margin-bottom: 5.5rem;  
+            margin-bottom: 5.5rem;
         }
 
-        #depoimentos-container{
+        #depoimentos-container {
             display: flex;
             width: 100%;
             flex-direction: column;
             height: fit-content;
 
-            .depoimento-card{
+            .depoimento-card {
                 margin-bottom: 4rem;
 
-                &:last-of-type{
+                &:last-of-type {
                     margin-bottom: 0;
                 }
             }
+        }
+    }
+
+    @media (max-width: $max-md) {
+        .container {
+            padding: 6rem 1.5rem;
         }
     }
 }
