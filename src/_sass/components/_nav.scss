@@ -82,16 +82,17 @@ nav {
 
         .navbar-brand {
             svg#nav-logo {
-                width: 2.5rem;
+                width: fit-content;
                 height: 2.5rem;
             }
 
             #nav-logo > path {
-                display: none;
+                display: block;
 
                 &:nth-of-type(11),
                 &:nth-of-type(12),
                 &:nth-of-type(13) {
+
                     display: block;
                 }
             }
