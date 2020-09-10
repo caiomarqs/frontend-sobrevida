@@ -34,4 +34,19 @@
             align-items: center;
         }
     }
+
+    @media (max-width: $max-md) {
+        .container {
+            flex-direction: column;
+            padding: 6rem 1.5rem;
+
+            #para-quem-contetudo {    
+                margin-bottom: 2.875rem;
+            }
+    
+            #para-quem-img {
+                min-height: 22.5rem;
+            }
+        }
+    }
 }

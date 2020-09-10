@@ -37,14 +37,14 @@
     @media (max-width: $max-md) {
         .container {
             flex-direction: column-reverse;
-            padding: 6rem 0;
+            padding: 6rem 1.5rem;
 
             #charts-text {
                 h3 {
                     min-height: unset;
-                    margin: 0 0 6rem 0;
+                    margin-bottom: 2.875rem;
                 }
-                margin: 0 0 6rem 0;
+                margin-bottom: 2.875rem;
             }
         }
     }
