@@ -192,9 +192,14 @@
             color: $cinza-400;
         }
 
+        //For safari IOS
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+
         &::-webkit-scrollbar {
             width: .5rem;
         }
+        
         &::-webkit-scrollbar-track {
             background: $branco-000;
         }
@@ -208,7 +213,7 @@
         .dialog-container{
             min-width: 7rem;
             max-width: 18rem;
-            height: fit-content;
+            min-height: fit-content;
             width: fit-content;
             padding: .5rem;
             display: flex;
