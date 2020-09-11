@@ -1,9 +1,11 @@
 import axios from 'axios'
 
 const sendQuestion = (question) => {
-    return axios({ 
+    console.log(process.env.REACT_APP_SERVER_URL)
+    return axios({
+        baseURL: process.env.REACT_APP_SERVER_URL,
         method: 'GET', 
-        url: `https://sobrevida-backend-dev.herokuapp.com/watson`, 
+        url: `/watson`, 
         params: { question: question } 
     })
 }
