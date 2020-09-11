@@ -43,25 +43,25 @@
 
         &:last-of-type {
             flex: 1;
-            padding: 2rem;
+            padding-top: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 4rem;
+            padding-left: 2rem;
             display: flex;
             flex-direction: column;
-
 
             ul > li > a {
                 color: $cinza-600;
                 transition: ease-in 0.15s filter, ease-in 0.15s color;
                 margin-right: 16px;
-        
+
                 &:hover {
                     text-decoration: none;
                     color: $vinho-000;
                 }
             }
 
-
-
-            .menu-items{
+            .menu-items {
                 flex: 1;
                 align-self: stretch;
 
@@ -71,17 +71,18 @@
                     filter: opacity(1);
                 }
 
-                li{
+                li {
                     margin-bottom: 1rem;
-                    
-                    a{
+
+                    a {
                         @include body1();
                     }
                 }
             }
 
-            .over-button{
+            .over-button {
                 align-self: center;
+                width: 100%;
             }
         }
     }
@@ -89,15 +90,13 @@
 
 #over-menu.open-menu {
     transform: translate(0%);
-
-
 }
 
-.over-backdrop{
+.over-backdrop {
     width: 100%;
     position: fixed;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.30);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1900;
 }
 
@@ -111,6 +110,7 @@ nav {
         #hambuger-menu {
             display: flex;
             width: 1.75rem;
+            min-width: 1.75rem;
             flex-direction: column;
             height: 16px;
             justify-content: space-between;

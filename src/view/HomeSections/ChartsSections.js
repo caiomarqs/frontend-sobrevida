@@ -11,7 +11,7 @@ const ChartsSection = () => {
                     <Chart />
                 </div>
                 <div id="charts-text">
-                    <h3>{constants['chartsSection.titulo']}</h3>
+                    <h3>{constants['chart.titulo']}</h3>
                     <p>{constants['chartsSection.p']}</p>
                 </div>
             </div>

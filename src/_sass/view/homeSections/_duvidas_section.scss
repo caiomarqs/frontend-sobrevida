@@ -1,17 +1,21 @@
-#duvidas-section{
+#duvidas-section {
     min-height: fit-content;
 
-    .container{
+    .container {
         padding: 6rem 0;
 
-        h3{
+        h3 {
             margin-bottom: 8.75rem;
         }
     }
 
-    @media (max-width: $max-md){
-        .container{
+    @media (max-width: $max-md) {
+        .container {
             padding: 6rem 1.5rem;
+
+            h3 {
+                margin-bottom: 6rem;
+            }
         }
     }
 }

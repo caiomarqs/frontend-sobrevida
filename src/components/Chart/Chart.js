@@ -93,7 +93,7 @@ const Chart = (props) => {
                             fontColor: '#000000',
                             fontSize: 15,
                             padding: 24,
-                            text: constants['chart.titulo']
+                            text: ''
                         },
                         responsive: true,// matem no tamanho da div pai
                         maintainAspectRatio: false, //não destorce o canvas renderizado
