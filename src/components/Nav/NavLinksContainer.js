@@ -31,7 +31,14 @@ const NavLinksContainer = ({ isOver, ...props }) => {
                 <li><NavLink hash="/#depoimentos-section" value={constants["nav.button3"]} activeDivs={['#depoimentos-section']} onClick={() => handleClick('#depoimentos-section')} /></li>
                 <li><NavLink hash="/#duvidas-section" value={constants["nav.button4"]} activeDivs={['#duvidas-section', '#chat-brand-section']} onClick={() => handleClick('#duvidas-section')} /></li>
             </ul>
-            {isOver && <Button className="solid-button-primary over-button" value="seja um doador" />}
+            {
+                isOver 
+                && 
+                <>
+                    <Button className="solid-button-primary over-button" value="seja um doador" />
+                    <Button className="outline-button-primary over-button" value="Faça o seu login" href='/login'/>
+                </>
+                }
         </>
 
     )

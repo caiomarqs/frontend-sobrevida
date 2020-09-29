@@ -77,6 +77,30 @@
     }
 }
 
+.outline-button-primary {
+    background-color: transparent;
+    color: $vinho-000;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out ;
+    border: 1px solid $vinho-000;
+    
+    &:hover {
+        background-color: $vinho-000;
+        color: $branco-000;
+    }
+}
+
+.outline-button-white {
+    background-color: transparent;
+    color: $branco-000;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out ;
+    border: 1px solid $cinza-000;
+    
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: $branco-000;
+    }
+}
+
 .custom-button.disabled{
     filter: saturate(0.8);
     cursor: default !important;
