@@ -64,7 +64,7 @@ nav {
     @media (max-width: $max-md) {
         justify-content: space-between;
 
-        #nav-button {
+        #nav-button, #nav-button2 {
             display: none;
         }
 
@@ -125,10 +125,14 @@ nav.scrolled {
         filter: opacity(1);
     }
 
+    .outline-button-primary.nav-button{
+        margin: 0 8px 0 0;
+    }
+
     .nav-button {
         justify-self: flex-end;
         display: flex;
-        transition: ease-in 0.15s display, ease-in 0.15s filter;
+        transition: ease-in 0.15s display, ease-in 0.15s filter, border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     }
 }
 

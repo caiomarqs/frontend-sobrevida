@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import { Button } from '../Button'
 import { LogoFull } from '../Icons'
 import { NavLinksContainer } from './NavLinksContainer'
 import { HambugerMenu } from '../OverMenu/HambugerMenu'
+import { ComponentsContext } from '../../contexts'
 
 const Nav = () => {
 
     const [style, setStyle] = useState('fixed-top')
+    const { componentsState } = useContext(ComponentsContext)
 
     //didMount
     useEffect(() => {
-
         const handleScroll = () => {
             if (window.scrollY > 50) {
 
@@ -40,14 +41,21 @@ const Nav = () => {
     }, [])
 
     return (
-        <nav className={style}>
-            <a className="navbar-brand" href="/">
-                <LogoFull id="nav-logo" />
-            </a>
-            <NavLinksContainer />
-            <Button id="nav-button" className="solid-button-primary nav-button" value="seja um doador" />
-            <HambugerMenu />
-        </nav>
+        <>
+            { 
+                componentsState.homeHeader 
+                && 
+                <nav className={style}>
+                    <a className="navbar-brand" href="/">
+                        <LogoFull id="nav-logo" />
+                    </a>
+                    <NavLinksContainer />
+                    <Button id='nav-button2'className="outline-button-primary nav-button" value="Faça o seu login" href='/login'/>
+                    <Button id="nav-button" className="solid-button-primary nav-button" value="seja um doador" />
+                    <HambugerMenu />
+                </nav>
+            }
+        </>
     )
 }
 
