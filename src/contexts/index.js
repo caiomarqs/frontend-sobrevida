@@ -1,2 +1,3 @@
 export * from './ChatContext'
-export * from './OverMenuContex'
+export * from './OverMenuContext'
+export * from './ComponetsContex'

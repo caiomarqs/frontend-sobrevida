@@ -3,11 +3,11 @@ import React, { useContext } from 'react'
 import constants from '../../constants/texts'
 import { Button } from '../Button'
 import { NavLink } from './NavLink'
-import { OverMenuContex, OVER_MENU_ACTIONS } from '../../contexts'
+import { OverMenuContext, OVER_MENU_ACTIONS } from '../../contexts'
 
 const NavLinksContainer = ({ isOver, ...props }) => {
 
-    const { dispatch } = useContext(OverMenuContex)
+    const { dispatch } = useContext(OverMenuContext)
 
     const handleClick = (hash) => {
         if (isOver) {

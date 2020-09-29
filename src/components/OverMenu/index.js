@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 
-import { OverMenuContex, OVER_MENU_ACTIONS } from '../../contexts'
+import { OverMenuContext, OVER_MENU_ACTIONS, ComponentsContext } from '../../contexts'
 import { CloseIcon } from '../../components'
 import { NavLinksContainer } from '../Nav/NavLinksContainer'
 
 const OverMenu = (props) => {
 
-    const { overMenuState, dispatch } = useContext(OverMenuContex)
+    const { overMenuState, dispatch } = useContext(OverMenuContext)
+    const { componentsState } = useContext(ComponentsContext)
 
     const handleClick = () => {
         dispatch({ type: OVER_MENU_ACTIONS.OPEN_CLOSE })
@@ -17,14 +18,18 @@ const OverMenu = (props) => {
     return (
         <>
             {overMenuState.isOpen ? <div className="over-backdrop" onClick={() => handleClick()} /> : <></>}
-            <div id='over-menu' className={overMenuState.isOpen ? 'open-menu' : ''}>
-                <div>
-                    <CloseIcon onClick={() => handleClick()} />
+            {
+                componentsState.overMenu
+                &&
+                <div id='over-menu' className={overMenuState.isOpen ? 'open-menu' : ''}>
+                    <div>
+                        <CloseIcon onClick={() => handleClick()} />
+                    </div>
+                    <div>
+                        <NavLinksContainer isOver={true} />
+                    </div>
                 </div>
-                <div>
-                    <NavLinksContainer isOver={true} />
-                </div>
-            </div>
+            }
         </>
     )
 }

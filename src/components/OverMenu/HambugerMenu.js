@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
-import { OverMenuContex, OVER_MENU_ACTIONS } from '../../contexts'
+import { OverMenuContext, OVER_MENU_ACTIONS } from '../../contexts'
 
 const HambugerMenu = (props) => {
 
-    const { overMenuState, dispatch } = useContext(OverMenuContex)
+    const { overMenuState, dispatch } = useContext(OverMenuContext)
 
     const handleHambugerMenu = () => {
         dispatch({ type: OVER_MENU_ACTIONS.OPEN_CLOSE })

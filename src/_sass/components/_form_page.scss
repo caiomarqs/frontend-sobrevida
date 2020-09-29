@@ -1,0 +1,51 @@
+.form-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+    .left-container {
+        width: 1rem;
+        background-color: $vinho-000;
+    }
+    
+    #form-content{
+        display: flex;
+        flex-direction: column;
+
+        #form-header {
+            padding: 1rem 1rem 0 1rem;
+            
+            #form-header-logo {
+                height: 2.5rem;
+                width: 2.1987rem;
+                path {
+                    fill: $preto-000;
+                }
+            }
+        }
+    }
+
+
+    .right-container {
+        background-color: $vinho-p-000;
+    }
+
+}
+
+#form-footer{
+    width: 22.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 96px;
+
+    a{
+        @include links();
+        color: $vinho-000;
+
+        &:last-of-type{
+            color: $preto-000;
+        }
+    }
+}
