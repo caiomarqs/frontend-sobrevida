@@ -10,7 +10,11 @@ const PrincipalSection = () => {
                 <div className="principal-conteudo">
                     <h4>{constants["principal.titulo"]}</h4>
                     <p>{constants["principal.msg1"]}</p>
-                    <Button className="solid-button-secondary" value="Seja um doador"/>
+                    <div className='principal-btns'>
+                        <Button className="solid-button-secondary" value="Seja um doador"/>
+                        <span>ou</span>
+                        <Button className="outline-button-white" value="Faça o seu login" href='/login'/>
+                    </div>
                 </div>
                 <img alt="Abraçando corações" src={require('../../assets/img/principal-img.svg')}></img>
             </div>
