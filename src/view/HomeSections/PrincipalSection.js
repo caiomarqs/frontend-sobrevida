@@ -11,7 +11,7 @@ const PrincipalSection = () => {
                     <h4>{constants["principal.titulo"]}</h4>
                     <p>{constants["principal.msg1"]}</p>
                     <div className='principal-btns'>
-                        <Button className="solid-button-secondary" value="Seja um doador"/>
+                        <Button className="solid-button-secondary" value="Seja um doador" href='/register'/>
                         <span>ou</span>
                         <Button className="outline-button-white" value="Faça o seu login" href='/login'/>
                     </div>

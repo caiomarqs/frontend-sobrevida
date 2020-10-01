@@ -51,7 +51,7 @@ const Nav = () => {
                     </a>
                     <NavLinksContainer />
                     <Button id='nav-button2'className="outline-button-primary nav-button" value="Faça o seu login" href='/login'/>
-                    <Button id="nav-button" className="solid-button-primary nav-button" value="seja um doador" />
+                    <Button id="nav-button" className="solid-button-primary nav-button" value="seja um doador"  href='/register'/>
                     <HambugerMenu />
                 </nav>
             }

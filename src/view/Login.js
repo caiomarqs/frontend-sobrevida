@@ -6,6 +6,7 @@ const Login = () => {
 
     return (
         <FormPage
+            pageName='Login'
             brandStyle="login-brand"
             formStyle="login-principal-container"
             imgSrc='treeLove.png'
@@ -20,8 +21,8 @@ const Login = () => {
                 <h2>Log In</h2>
                 <p>Entre na sua conta do sobreVida</p>
                 <SimpleForm>
-                    <SimpleInput name='email' placeholder='Digite seu email' type='email'/>
-                    <SimpleInput name='password' placeholder='Digite sua senha' type='password'/>
+                    <SimpleInput htmlFor='email' label='E-mail' placeholder='Digite seu e-mail' type='email'/>
+                    <SimpleInput htmlFor='password' label='Senha' placeholder='Digite sua senha' type='password'/>
                     <Button value="Login" className='solid-button-primary login-btn'/>
                 </SimpleForm>
                 <div className='register-login'>

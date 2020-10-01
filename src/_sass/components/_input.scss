@@ -5,7 +5,7 @@ label{
     margin-bottom: 4px;
 }
 
-input{
+input, select, .text-area{
     flex: 1;
     min-height: 3rem;
     border-radius: 0.25rem;
@@ -18,5 +18,68 @@ input{
     &:focus {
         border: 0.05rem solid $cinza-400;
         outline: none;
+    }
+}
+.checkbox-input-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 28px;
+
+    input[type="checkbox"]{
+        display: flex;
+        align-items: center;
+        min-height: fit-content;
+        width: fit-content !important;
+        flex: 0;
+        background-color: $vinho-000;
+        margin-right: .5rem;
+
+
+        &:checked{
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+
+    }
+
+    label{
+        
+        display: flex;
+        align-items: center;
+        @include noselect();
+        margin-bottom: 0;
+        &:hover{
+            cursor: pointer;
+        }
+
+    }
+}
+
+.text-area{
+    padding: 0.5rem;
+    @include body1();
+    height: 180px;
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    resize: none;
+
+    &::-webkit-scrollbar {
+        width: .5rem;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: $branco-000;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $cinza-000;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $cinza-200;
+        cursor: pointer;
     }
 }
