@@ -20,16 +20,24 @@
 
     img {
         z-index: 100;
-        min-width: 42.875rem;
-        width: 42.875rem;
+        width: 100%;
+        max-width: 42.875rem;
+    }
+
+    @media (max-width: $max-md) {
+        display: none;
     }
 }
 
 .cadastro-principal-container {
     flex: 4;
-    .cadastro-form-header{
-        h2{
-            margin-bottom: .25rem;
+    padding: 16px;
+    .cadastro-form-header {
+        width: 40.5rem;
+        margin-bottom: 6rem;
+
+        h2 {
+            margin-bottom: 0.25rem;
         }
     }
     .cadastro-form-container {
@@ -44,67 +52,66 @@
             display: flex;
             flex-flow: row wrap;
 
-            .simple-input-group{
+            .simple-input-group {
                 margin-bottom: 0.5rem;
             }
-            
+
             #simple-input-group-nome,
             #simple-input-group-email,
-            #simple-input-group-cpf{
+            #simple-input-group-cpf {
                 width: 100%;
             }
 
             #simple-input-group-password,
             #simple-input-group-rPassword {
-                width: calc(50% - .5rem);
+                width: calc(50% - 0.5rem);
             }
 
-            #simple-input-group-password{
+            #simple-input-group-password {
                 margin-right: 1rem;
             }
 
-            #dropdown-input-group-uf{
+            #dropdown-input-group-uf {
                 margin-right: 1rem;
-                width: calc(20% - .5rem);
+                width: calc(20% - 0.5rem);
                 margin-bottom: 0;
             }
 
-            #simple-input-group-cidade{
-                width: calc(80% - .5rem);
+            #simple-input-group-cidade {
+                width: calc(80% - 0.5rem);
                 margin-bottom: 0;
             }
-
         }
 
-        
-        .cadastro-slide-2, .cadastro-slide-2>div {
+        .cadastro-slide-2,
+        .cadastro-slide-2 > div {
             display: flex;
             flex-flow: row wrap;
 
-            .simple-input-group, p, .dropdown-input-group{
+            .simple-input-group,
+            p,
+            .dropdown-input-group {
                 margin-bottom: 0.5rem;
                 width: 100%;
             }
 
-            hr{
+            hr {
                 width: 100%;
                 color: $cinza-200;
                 background-color: $cinza-200;
             }
 
-            button{
-                margin: .5rem 0 1.5rem 0;
+            button {
+                margin: 0.5rem 0 1.5rem 0;
             }
-          
-
         }
 
-        .cadastro-slide-3{
-            .text-area-group{
+        .cadastro-slide-3 {
+            .text-area-group {
                 margin-bottom: 0.75rem;
             }
 
-            #cadastro-btn{
+            #cadastro-btn {
                 align-self: flex-end;
                 width: 100%;
                 margin-top: 4rem;
@@ -141,20 +148,63 @@
 
     button[disabled] {
         color: transparent;
-        
+
         i > svg > path {
             fill: transparent;
         }
     }
 
-    .cadastro-form-header {
+    .close-alert {
         width: 40.5rem;
-        margin-bottom: 6rem;
+        margin-bottom: 2rem;
+        margin-top: -4rem;
     }
 
-    .close-alert{
-        width: 40.5rem;
-        margin-bottom: 32px;
-        margin-top: -4rem;
+    @media (max-width: $max-md) {
+        .cadastro-form-header {
+            width: 100%;
+            max-width: 40.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .close-alert{
+            width: 100%;
+            max-width: 40.5rem;
+        }
+    }
+
+    @media (max-width: $max-sm) {
+        .cadastro-form-container {
+            height: fit-content;
+            padding-top: 2rem;
+
+            .cadastro-slide-1 {
+                #simple-input-group-password,
+                #simple-input-group-rPassword {
+                    width: 100%
+                    
+                }
+
+                #simple-input-group-password {
+                    margin-right: 0;
+                }
+
+                #dropdown-input-group-uf {
+                    margin-right: 1rem;
+                    width: calc(30% - 0.5rem);
+                    margin-bottom: 0;
+                }
+
+                #simple-input-group-cidade {
+                    width: calc(70% - 0.5rem);
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .close-alert {
+            margin-bottom: 2rem;
+            margin-top: -1rem;
+        }
     }
 }

@@ -29,6 +29,11 @@
         &::-webkit-scrollbar-thumb:hover {
             background: $cinza-200;
         }
+
+        @media (max-width: $max-md){
+            height: fit-content;
+            max-height: none;
+        }
     }
 
     .slideform-footer-container {
@@ -108,5 +113,11 @@
                 }
             }
         }
+    }
+
+    @media (max-width: $max-md){
+        width: 100%;
+        max-width: 40.5rem;
+        height: fit-content;
     }
 }

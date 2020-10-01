@@ -7,6 +7,14 @@
     .left-container {
         width: 1rem;
         background-color: $vinho-000;
+
+        @media (max-width: $max-md){
+            width: .5rem;
+        }
+
+        @media (max-width: $max-sm){
+            display: none;
+        }
     }
     
     #form-content{
@@ -47,5 +55,11 @@
         &:last-of-type{
             color: $preto-000;
         }
+    }
+
+    @media (max-width: $max-sm){
+        width: 100%;
+        max-width: 22.5rem;
+        margin-bottom: 6rem;
     }
 }
