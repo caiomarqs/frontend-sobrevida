@@ -1,0 +1,123 @@
+#slide-form {
+    border-radius: 0.25rem;
+    width: 40.5rem;
+    min-height: 29.5rem;
+    border: 0.05rem solid $cinza-200;
+    display: block;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .slides-container {
+        flex: 1;
+        max-height: calc(29.5rem - (2.7rem + 2rem));
+        overflow: hidden;
+
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            width: .5rem;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: $branco-000;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $cinza-200;
+        }
+
+        @media (max-width: $max-md){
+            height: fit-content;
+            max-height: none;
+        }
+    }
+
+    .slideform-footer-container {
+        width: 100%;
+        height: 2.5rem;
+        display: flex;
+        @include noselect();
+
+        .slides-count {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: $cinza-200;
+                border-radius: 50%;
+                margin: 0 0.25rem;
+                transition: background-color 0.15s ease-in-out;
+            }
+
+            li.active{
+                background-color: $vinho-000;
+            }
+
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: $cinza-200;
+            transition: color 0.15s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i > svg > path {
+                transition: fill 0.15s ease-in-out;
+            }
+
+            &:hover {
+                color: $preto-000;
+
+                i > svg > path {
+                    fill: $preto-000;
+                }
+            }
+
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+
+        button[disabled] {
+            color: transparent;
+            
+            i > svg > path {
+                fill: transparent;
+            }
+        }
+
+        #prev-btn {
+            i {
+                margin: 0 0.25rem 0 0;
+            }
+        }
+
+        #next-btn {
+            i {
+                margin: 0 0 0 0.25rem;
+
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    @media (max-width: $max-md){
+        width: 100%;
+        max-width: 40.5rem;
+        height: fit-content;
+    }
+}

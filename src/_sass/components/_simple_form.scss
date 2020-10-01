@@ -3,4 +3,12 @@
     border-radius: 0.25rem;
     width: 22.5rem;
     padding: 1rem;
+
+
+
+    @media (max-width: $max-sm){
+        width: 100%;
+        max-width: 22.5rem;
+    }
+
 }

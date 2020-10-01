@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SimpleInput = ({ name, type, placeholder, onChange }) => {
+const SimpleInput = ({ name, type, placeholder, onChange, htmlFor, label, value, ...props}) => {
     return (
-        <>
-            <label htmlFor={name} className='simple-label'>{name}</label>
-            <input name={name} id={name} type={type} placeholder={placeholder} onChange={onChange} className='simple-input' />
-        </>
+        <div className='simple-input-group' id={`simple-input-group-${htmlFor}`}>
+            <label htmlFor={htmlFor} className='simple-label'>{label}</label>
+            <input name={htmlFor} id={`input-${htmlFor}`} type={type} placeholder={placeholder} onChange={onChange} className='simple-input' value={value} {...props}/>
+        </div>
     )
 }
 

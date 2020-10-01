@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { Nav, Footer, OverMenu } from './components';
-import { Home, NotFound, Login } from './view';
+import { Home, NotFound, Login, Cadastro } from './view';
 import { ComponentsProvider, OverMenuProvider } from './contexts';
 
 import './_sass/styles.scss';
@@ -20,6 +20,7 @@ const App = () => {
         <Switch>
           <Route exact path="/"         component={Home} />
           <Route exact path="/login"    component={Login} />
+          <Route exact path="/register" component={Cadastro} />
           <Route       path="*"         component={NotFound} />
         </Switch>
         <Footer />

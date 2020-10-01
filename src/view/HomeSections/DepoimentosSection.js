@@ -2,6 +2,7 @@ import React from 'react'
 
 import constants from '../../constants/texts'
 import { Depoimento } from '../../components'
+
 const DepoimentosSection = () => {
     return (
         <section id="depoimentos-section">

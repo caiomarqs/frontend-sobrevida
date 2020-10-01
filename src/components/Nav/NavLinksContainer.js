@@ -35,7 +35,7 @@ const NavLinksContainer = ({ isOver, ...props }) => {
                 isOver 
                 && 
                 <>
-                    <Button className="solid-button-primary over-button" value="seja um doador" />
+                    <Button className="solid-button-primary over-button" value="seja um doador" href='/register'/>
                     <Button className="outline-button-primary over-button" value="Faça o seu login" href='/login'/>
                 </>
                 }

@@ -4,14 +4,14 @@ import { FormHeader } from './FormHeader'
 import { FormFooter } from './FormFooter'
 import { ComponentsContext, COMPONENTS_ACTIONS } from '../../contexts'
 
-const FormPage = ({formStyle, brandStyle, imgSrc, ...props }) => {
+const FormPage = ({formStyle, brandStyle, imgSrc, pageName, ...props }) => {
 
     const { dispatch } = useContext(ComponentsContext)
 
     useEffect(() => {
-        document.title = 'sobreVida | Cadastro'
+        document.title = `sobreVida | ${pageName}`
         dispatch({ type: COMPONENTS_ACTIONS.DISABLE_HOME_COMPONENTS })
-    }, [dispatch])
+    }, [dispatch, pageName])
 
 
     return (
