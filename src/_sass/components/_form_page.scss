@@ -46,7 +46,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 96px;
 
     a{
         @include links();
@@ -60,6 +59,5 @@
     @media (max-width: $max-sm){
         width: 100%;
         max-width: 22.5rem;
-        margin-bottom: 6rem;
     }
 }

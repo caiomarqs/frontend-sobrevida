@@ -33,11 +33,11 @@ const Login = () => {
         setShowErrors(false)
     }
 
-    
+
     const activeError = () => {
         setShowErrors(true)
         setTimeout(() => {
-            setShowErrors(false) 
+            setShowErrors(false)
         }, 30000)
     }
 
@@ -66,8 +66,8 @@ const Login = () => {
         if (validation()) {
 
         }
-        else{
-            if(isActive) activeError()
+        else {
+            if (isActive) activeError()
         }
     }
 
@@ -83,19 +83,23 @@ const Login = () => {
                     <p>Registrando sua vontade de ser um doador você ajuda que vidas continuem florecendo</p>
                 </div>
             }
-        >   
-           
+        >
+
             <div className='login-form-container'>
-                <h2>Log In</h2>
-                <p>Entre na sua conta do sobreVida</p>
-                {showErrors && <CloseAlert className='error' mesages={errors} onClick={() => handleCloseError()}/>}
-                <SimpleForm>
-                    <SimpleInput htmlFor='email' label='E-mail' placeholder='Digite seu e-mail' type='email' onChange={(e) => handleEmail(e.target.value)} value={email} />
-                    <SimpleInput htmlFor='password' label='Senha' placeholder='Digite sua senha' type='password' onChange={(e) => handlePass(e.target.value)} value={password} />
-                    <Button value="Login" className={`solid-button-primary login-btn ${isActive === false ? 'disabled' : ''}`} onClick={() => handleLogin()} />
-                </SimpleForm>
-                <div className='register-login'>
-                    <p>Não é um doador ainda? <a href="/register">Registre sua Vontade</a></p>
+                {showErrors && <CloseAlert className='error' mesages={errors} onClick={() => handleCloseError()} />}
+                <div>
+                    <div className='login-form-header'>
+                        <h2>Log In</h2>
+                        <p>Entre na sua conta do sobreVida</p>
+                    </div>
+                    <SimpleForm>
+                        <SimpleInput htmlFor='email' label='E-mail' placeholder='Digite seu e-mail' type='email' onChange={(e) => handleEmail(e.target.value)} value={email} />
+                        <SimpleInput htmlFor='password' label='Senha' placeholder='Digite sua senha' type='password' onChange={(e) => handlePass(e.target.value)} value={password} />
+                        <Button value="Login" className={`solid-button-primary login-btn ${isActive === false ? 'disabled' : ''}`} onClick={() => handleLogin()} />
+                    </SimpleForm>
+                    <div className='register-login'>
+                        <p>Não é um doador ainda? <a href="/register">Registre sua Vontade</a></p>
+                    </div>
                 </div>
                 <FormFooter />
             </div>
