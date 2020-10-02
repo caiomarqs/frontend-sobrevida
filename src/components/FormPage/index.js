@@ -1,17 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import { FormHeader } from './FormHeader'
 import { FormFooter } from './FormFooter'
-import { ComponentsContext, COMPONENTS_ACTIONS } from '../../contexts'
 
 const FormPage = ({formStyle, brandStyle, imgSrc, pageName, ...props }) => {
 
-    const { dispatch } = useContext(ComponentsContext)
-
     useEffect(() => {
         document.title = `sobreVida | ${pageName}`
-        dispatch({ type: COMPONENTS_ACTIONS.DISABLE_HOME_COMPONENTS })
-    }, [dispatch, pageName])
+    }, [pageName])
 
 
     return (

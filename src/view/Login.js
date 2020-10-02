@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useCallback, useContext, useState } from 'react'
+import { useCookies } from 'react-cookie'
 
-import { FormPage, SimpleForm, SimpleInput, Button, FormFooter } from '../components'
-import { CloseAlert } from '../components/Alerts'
+import { FormPage, SimpleForm, SimpleInput, Button, FormFooter, CloseAlert } from '../components'
+import { authLogIn, authValidation } from '../services'
+import { Authcontext, AUTH_ACTIONS } from '../contexts'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
+
+    const history = useHistory()
+
+    // eslint-disable-next-line
+    const [cookie, setCookie, removeCookie] = useCookies(['jwt'])
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -11,11 +19,17 @@ const Login = () => {
     const [errors, setErrors] = useState([])
     const [showErrors, setShowErrors] = useState(false)
 
+
+    const { dispatch } = useContext(Authcontext)
+
+
+    //Handle email
     const handleEmail = (thisEmail) => {
         setEmail(thisEmail)
         activeButton()
     }
 
+    //Handle pass
     const handlePass = (thisPass) => {
         setPassword(thisPass)
         activeButton()
@@ -29,23 +43,12 @@ const Login = () => {
         return setIsActive(false)
     }
 
-    const handleCloseError = () => {
-        setShowErrors(false)
+    const enterKeyPress = (e, type) => {
+        if (e.keyCode === 13 && type !== '') handleLogin()
     }
 
-
-    const activeError = () => {
-        setShowErrors(true)
-        setTimeout(() => {
-            setShowErrors(false)
-        }, 30000)
-    }
-
-
-    const validation = () => {
-
+    const validation = useCallback(() => {
         const newErrors = [];
-
         const regxEmail = /([a-zA-Z\d.].+)@([a-zA-Z\d].+)([.][a-z]{2,4})([.][a-z]{2,4})?/i
 
         if (!regxEmail.test(email)) {
@@ -56,20 +59,49 @@ const Login = () => {
         }
 
         setErrors(newErrors)
-
-        //Retorna o propio teste
         return newErrors.length === 0
+
+    }, [email, password])
+
+    const apiLogIn = async () => {
+        try {
+            const { data } = await authLogIn(email, password)
+            setErrors(['Usuario Autenticado'])
+            setShowErrors(true)
+            setEmail('')
+            setPassword('')
+
+            dispatch({ type: AUTH_ACTIONS.SET_SESSION })
+            setCookie('token', data.token)
+
+            history.push('/dash')
+        } catch (err) {
+            setErrors(['Usuário ou senha invalidos'])
+            setShowErrors(true)
+        }
     }
 
-
-    const handleLogin = () => {
+    const handleLogin = useCallback(() => {
         if (validation()) {
-
+            authValidation(email, password).then(({ data }) => {
+                const thisErrors = []
+                if (!data.email) thisErrors.push('Emai não cadastrado')
+                else if (!data.password) thisErrors.push('Sua senha está errada')
+                if (thisErrors.length !== 0) {
+                    setErrors(thisErrors)
+                    setShowErrors(true)
+                }
+                else {
+                    apiLogIn()
+                }
+            })
         }
         else {
-            if (isActive) activeError()
+            if (isActive) setShowErrors(true)
         }
-    }
+
+    }, [email, password, isActive, validation, dispatch, history, setCookie])
+
 
     return (
         <FormPage
@@ -84,18 +116,36 @@ const Login = () => {
                 </div>
             }
         >
-
             <div className='login-form-container'>
-                {showErrors && <CloseAlert className='error' mesages={errors} onClick={() => handleCloseError()} />}
                 <div>
                     <div className='login-form-header'>
                         <h2>Log In</h2>
                         <p>Entre na sua conta do sobreVida</p>
                     </div>
+                    {showErrors && <CloseAlert className='error' mesages={errors} onClick={() => setShowErrors(false)} />}
                     <SimpleForm>
-                        <SimpleInput htmlFor='email' label='E-mail' placeholder='Digite seu e-mail' type='email' onChange={(e) => handleEmail(e.target.value)} value={email} />
-                        <SimpleInput htmlFor='password' label='Senha' placeholder='Digite sua senha' type='password' onChange={(e) => handlePass(e.target.value)} value={password} />
-                        <Button value="Login" className={`solid-button-primary login-btn ${isActive === false ? 'disabled' : ''}`} onClick={() => handleLogin()} />
+                        <SimpleInput
+                            htmlFor='email'
+                            label='E-mail'
+                            placeholder='Digite seu e-mail'
+                            type='email'
+                            onChange={(e) => handleEmail(e.target.value)} value={email}
+                            onKeyDown={(e) => enterKeyPress(e, e.target.value)}
+                        />
+                        <SimpleInput
+                            htmlFor='password'
+                            label='Senha'
+                            placeholder='Digite sua senha'
+                            type='password'
+                            onChange={(e) => handlePass(e.target.value)}
+                            value={password}
+                            onKeyDown={(e) => enterKeyPress(e, e.target.value)}
+                        />
+                        <Button
+                            value="Login"
+                            className={`solid-button-primary login-btn ${isActive === false ? 'disabled' : ''}`}
+                            onClick={() => handleLogin()}
+                        />
                     </SimpleForm>
                     <div className='register-login'>
                         <p>Não é um doador ainda? <a href="/register">Registre sua Vontade</a></p>

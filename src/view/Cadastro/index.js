@@ -56,19 +56,19 @@ const Cadastro = () => {
 
     const handleRemoveFamiliar = () => {
         const lastPosition = Object.keys(familiares).length - 1
-
-        const { [lastPosition]: foo, ...lastFamiliares } = familiares
+        
+        const { [lastPosition]: obj, ...lastFamiliares } = familiares
 
         setFamliares(lastFamiliares)
-
     }
 
     const handleCadastra = () => {
-        if (validation(nome, email, cpf, password, rPassword, uf, cidade, familiares, depoimento, accept, setErrors)) { 
-
+        if (validation(nome, email, cpf, password, rPassword, uf, cidade, familiares, depoimento, accept, setErrors)) {
+            return console.log('valido')
         }
-        else{
-            if(accept) activeError()
+        else {
+            if (accept) { activeError() }
+            return console.log('invalido')
         }
     }
 

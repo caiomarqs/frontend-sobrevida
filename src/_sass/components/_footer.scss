@@ -1,3 +1,12 @@
+#footer {
+    min-height: 6rem;
+    background-color: $branco-000;
+
+    #footer-rigths{
+        border-top: 0.05rem solid $cinza-000;
+    }
+}
+
 footer {
     min-height: 28.375rem;
     background-color: $vinho-000;
@@ -96,8 +105,6 @@ footer {
             }
         }
     }
-    
-
 
     @media (max-width: $max-md) {
         .container {
@@ -116,12 +123,11 @@ footer {
                         align-self: stretch;
                         flex: 1;
                         flex-basis: 100%;
-                    
                     }
 
                     &:first-of-type {
                         padding: 5.25rem 3rem;
-                        
+
                         img {
                             width: 100%;
                         }
@@ -135,7 +141,7 @@ footer {
                     flex-basis: calc(100% / 3);
                 }
 
-                #footer-col-4{
+                #footer-col-4 {
                     .footer-button {
                         width: 10.5rem;
                     }
@@ -148,14 +154,14 @@ footer {
         .container {
             #footer-content {
                 flex-direction: row;
-                
-                #footer-col-1{
+
+                #footer-col-1 {
                     flex: 1;
                     flex-basis: 100%;
                 }
 
-                #footer-col-1{
-                    padding:  0 0 5.25rem 0;
+                #footer-col-1 {
+                    padding: 0 0 5.25rem 0;
                 }
                 #footer-col-2,
                 #footer-col-3 {
@@ -165,6 +171,4 @@ footer {
             }
         }
     }
-
-   
 }

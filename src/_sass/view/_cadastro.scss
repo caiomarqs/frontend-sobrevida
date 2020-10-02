@@ -31,7 +31,6 @@
 
 .cadastro-principal-container {
     flex: 4;
-    padding: 16px;
     overflow: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -66,6 +65,7 @@
         height: 100%;
         align-items: center;
         justify-content: space-evenly;
+        padding: 1rem;
 
         .cadastro-slide-1 {
             display: flex;

@@ -57,9 +57,10 @@ const validation = (nome, email, cpf, password, rPassword, uf, cidade, familiare
         thisErrors.push(`Você precisa aceitar em ser um doador`)
     }
 
+    console.log(thisErrors)
     cb(thisErrors)
 
-    return thisErrors === 0
+    return thisErrors.length === 0
 }
 
 const validateCpf = (strCpf) => {
@@ -70,8 +71,6 @@ const validateCpf = (strCpf) => {
             .replace('.', "")
             .replace('.', "")
             .replace('-', "")
-
-        console.log(cpf)
 
         Soma = 0;
         if (cpf === "00000000000") return false;
