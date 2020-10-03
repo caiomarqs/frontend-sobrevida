@@ -12,7 +12,7 @@ const authLogIn = async (email, password) => {
         },
         headers: {
             'Content-Type': 'application/json'
-        },
+        }
     })
 
 }

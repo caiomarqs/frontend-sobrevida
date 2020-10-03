@@ -6,13 +6,11 @@ import { ExpandArrow } from '../Icons';
 const Perguntas = () => {
   const [selectedQuestion, toggleQuestion] = useState(-1);
 
-  function openQuestion(index) {
+  const openQuestion = (index) => {
     toggleQuestion(selectedQuestion === index ? -1 : index);
   }
 
-  const perguntas = getPerguntas();
-
-  function getPerguntas() {
+  const getPerguntas = () => {
     const perguntas = [
       {
         pergunta: constants["perguntas.pergunta1"],
@@ -45,6 +43,8 @@ const Perguntas = () => {
     ];
     return perguntas;
   }
+
+  const perguntas = getPerguntas();
 
   return (
     <div>

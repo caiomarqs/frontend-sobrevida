@@ -1,10 +1,11 @@
 import React, { useCallback, useContext, useState } from 'react'
 import { useCookies } from 'react-cookie'
+import { useHistory } from 'react-router-dom'
 
 import { FormPage, SimpleForm, SimpleInput, Button, FormFooter, CloseAlert } from '../components'
 import { authLogIn, authValidation } from '../services'
 import { Authcontext, AUTH_ACTIONS } from '../contexts'
-import { useHistory } from 'react-router-dom'
+
 
 const Login = () => {
 
@@ -63,7 +64,7 @@ const Login = () => {
 
     }, [email, password])
 
- 
+
 
     const handleLogin = useCallback(() => {
 
@@ -72,8 +73,9 @@ const Login = () => {
                 const { data } = await authLogIn(email, password)
                 setEmail('')
                 setPassword('')
-                dispatch({ type: AUTH_ACTIONS.SET_SESSION })
+                dispatch({ type: AUTH_ACTIONS.SET_SESSION, payload: data.token })
                 setCookie('token', data.token)
+                setCookie('id', data.id)
                 history.push('/dash')
             } catch (err) {
                 setErrors(['Usuário ou senha invalidos'])
@@ -84,15 +86,15 @@ const Login = () => {
         if (validation()) {
             authValidation(email, password).then(({ data }) => {
                 const thisErrors = []
-                
+
                 if (!data.email) thisErrors.push('Emai não cadastrado')
                 else if (!data.password) thisErrors.push('Sua senha está errada')
-                
+
                 if (thisErrors.length !== 0) {
                     setErrors(thisErrors)
                     setShowErrors(true)
                 }
-                
+
                 else apiLogIn()
             })
         }

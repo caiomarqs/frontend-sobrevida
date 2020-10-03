@@ -23,9 +23,8 @@ const AuthProvider = (props) => {
 
     useEffect(() => {
         if (cookie.token) {
-            dispatch({ type: AUTH_ACTIONS.SET_SESSION })
+            dispatch({ type: AUTH_ACTIONS.SET_SESSION, payload: cookie.token })
         }
-
     }, [cookie, setCookie, removeCookie])
 
     return (

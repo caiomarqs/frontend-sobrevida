@@ -1,0 +1,33 @@
+.dash-header {
+    font-weight: bold;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 0.8px solid $cinza-000;
+    margin-top: 3rem;
+
+    h6 {
+        flex: 1;
+        color: $preto-000;
+        transition: color 0.15s ease-in-out;
+    }
+
+    a {
+        color: $cinza-200;
+        transition: color 0.15s ease-in-out;
+
+        &:hover {
+            color: $preto-000;
+            text-decoration: none;
+        }
+    }
+
+    @media (max-width: $max-md) {
+        margin-top: 1rem;
+
+        a {
+            @include links();
+        }
+    }
+}

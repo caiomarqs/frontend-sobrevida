@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 
-import { Authcontext, OverMenuProvider } from '../../contexts'
-import { Footer, Nav, OverMenu } from '../../components'
+import { Authcontext } from '../../contexts'
+import { Footer, Nav } from '../../components'
 import { DashboardPainel } from './DashboardPainel'
 
 const DashBoard = () => {
@@ -15,10 +15,7 @@ const DashBoard = () => {
 
     return (
         <>
-            <OverMenuProvider>
-                <Nav />
-                <OverMenu />
-            </OverMenuProvider>
+            <Nav />
             <DashboardPainel />
             <Footer />
         </>

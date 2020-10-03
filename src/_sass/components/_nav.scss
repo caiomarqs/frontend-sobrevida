@@ -60,6 +60,15 @@ nav {
     .nav-button {
         display: none;
     }
+    .nav-middle{
+        flex: 1;
+    }
+    #log-out-btn{
+        background-color: transparent;
+        border: transparent 0;
+        @include links();
+        font-weight: bold;
+    }
 
     @media (max-width: $max-md) {
         justify-content: space-between;

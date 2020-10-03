@@ -73,8 +73,8 @@ const Nav = (props) => {
                 <a className="navbar-brand" href="/">
                     <LogoFull id="nav-logo" />
                 </a>
+                <div className='nav-middle'></div>
                 <button id='log-out-btn' onClick={() => handleLogOut()}>Sair</button>
-                <HambugerMenu />
             </nav>
         )
     }
