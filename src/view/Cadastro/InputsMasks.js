@@ -34,8 +34,8 @@ const handleContato = (value) => {
 const handleStringOnly = (value, cb) => {
 
     let newValue = value
-        .replace(/[^\D]/g, "")  //Remove tudo que for dígito
-
+        .replace(/[^a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]/g, "") //Remove tudo que não for letra
+        
     cb(newValue)
 }
 

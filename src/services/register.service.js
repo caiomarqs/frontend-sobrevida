@@ -6,8 +6,8 @@ const postUser = async (user) => {
         method: 'POST',
         url: '/doador',
         data: {
-            nome: user.nome,
-            sobreNome: user.nome,
+            nome: user.nome.substr(0, user.nome.indexOf(' ')), //Pegando o primeiro nome
+            sobreNome: user.nome.substr(user.nome.indexOf(' ')+1), //Pegando o sobre nome
             email: user.email,
             senha: user.password,
             cpf: user.cpf,
@@ -33,8 +33,8 @@ const postFamiliar = async (familiar, idUser) => {
         method: 'POST',
         url: '/familiar',
         data: {
-            nome: familiar.nome,
-            sobreNome: familiar.nome,
+            nome: familiar.nome.substr(0, familiar.nome.indexOf(' ')),
+            sobreNome: familiar.nome.substr(familiar.nome.indexOf(' ')+1),
             parentesco: familiar.parentesco,
             descParentesco: familiar.descParentesco === undefined ? ''  : familiar.descParentesco,
             contatos: [

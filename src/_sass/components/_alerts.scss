@@ -42,3 +42,23 @@
     }
 }
 
+.close-alert.success{
+    background-color: $verde-p-000;
+    border: $verde-000 .8px solid;
+
+    svg>path{
+        fill: $verde-000;
+    }
+
+    span{
+        width: 100%;
+        text-align: center;
+        color: $verde-000;
+    }
+
+    a{
+        color:$verde-000;
+        font-weight: bold;
+    }
+}
+

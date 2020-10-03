@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
 
 import { FormPage, FormFooter, SlideForm, SimpleInput, DropDown, TextArea, Slide, CheckBox, Button, CloseAlert } from '../../components'
 import { SlideFormProvider } from '../../contexts'
 import UFS from '../../constants/ufs'
 import GRAU_FAMILIAR from '../../constants/grauFamiliar'
-import { CadastroFormHeader } from './CadastroFormHedear';
+import { CadastroFormHeader } from './CadastroFormHedear'
 import { handleContato, handleCpf, handleStringOnly } from './InputsMasks'
 import { validation } from './InputsValidation'
 import { authValidation, postUser, postFamiliar } from '../../services'
 
 const familiarModel = {
     nome: '',
-    contato: '',
+    numero: '',
     parentesco: '',
     descParentesco: ''
 }
@@ -24,8 +23,6 @@ const cadastroTitles = [
 ]
 
 const Cadastro = () => {
-
-    const history = useHistory()
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -39,19 +36,17 @@ const Cadastro = () => {
     const [accept, setAccept] = useState(false)
     const [errors, setErrors] = useState(false)
     const [showErrors, setShowErrors] = useState(false)
+    const [showSuccess, setShowSuccess] = useState(false)
 
     const familiaresForms = []
 
     const activeError = () => {
         setShowErrors(true)
-        setTimeout(() => {
-            setShowErrors(false)
-        }, 30000)
     }
 
-    const handleCloseError = () => {
-        clearTimeout()
+    const handleCloseAlerts = () => {
         setShowErrors(false)
+        setShowSuccess(false)
     }
 
     const handleAddFamiliar = () => {
@@ -60,10 +55,21 @@ const Cadastro = () => {
 
     const handleRemoveFamiliar = () => {
         const lastPosition = Object.keys(familiares).length - 1
-
         const { [lastPosition]: obj, ...lastFamiliares } = familiares
-
         setFamliares(lastFamiliares)
+    }
+
+    const clearAllForm = () => {
+        setNome('')
+        setEmail('')
+        setCpf('')
+        setPassword('')
+        setRPassword('')
+        setUf('')
+        setCidade('')
+        setFamliares({ 0: familiarModel })
+        setDepoimento('')
+        setAccept(false)
     }
 
     const handleCadastra = () => {
@@ -81,29 +87,34 @@ const Cadastro = () => {
                         Object.entries(familiares).forEach(([key, familiar]) => {
                             postFamiliar(familiar, user.data.cod)
                         })
-                        history.push('/login')
                     })
+                    clearAllForm()
+                    setShowSuccess(true)
                 }
             })
 
         }
         else {
-            if (accept) { activeError() }
+            if (accept) activeError()
             return console.log('invalido')
         }
     }
 
     return (
-        <FormPage
-            brandStyle="cadastro-brand"
-            formStyle="cadastro-principal-container"
-            imgSrc='clipBoard.png'
-            pageName='Cadastro'
-        >
+        <FormPage brandStyle="cadastro-brand" formStyle="cadastro-principal-container" imgSrc='clipBoard.png' pageName='Cadastro' >
             <div className='cadastro-form-container'>
                 <SlideFormProvider>
                     <CadastroFormHeader texts={cadastroTitles} />
-                    {showErrors && <CloseAlert className='error' mesages={errors} onClick={() => handleCloseError()} />}
+                    {
+                        showErrors
+                        &&
+                        <CloseAlert className='error' mesages={errors} onClick={() => handleCloseAlerts()} />
+                    }
+                    {
+                        showSuccess
+                        &&
+                        <CloseAlert className='success' mesages={[`Você foi cadastrado com sucesso!`, <a href='/login'>Faça seu login</a>]} onClick={() => handleCloseAlerts()} />
+                    }
                     <SlideForm>
                         <Slide className='cadastro-slide-1' index={0}>
                             <SimpleInput htmlFor='nome' label='Nome Completo' type='text' value={nome} onChange={(e) => handleStringOnly(e.target.value, setNome)} />
@@ -171,9 +182,24 @@ const Cadastro = () => {
                             }
                         </Slide>
                         <Slide className='slide cadastro-slide-3' index={2}>
-                            <TextArea htmlFor='depoimento' label='Deixe registrado sua vontade de doar' limit={256} value={depoimento} onChange={(e) => setDepoimento(e.target.value)} />
-                            <CheckBox label='Você aceita ser um doador de orgãos?' checked={accept} onClick={() => setAccept(!accept)} />
-                            <Button id="cadastro-btn" className={`solid-button-primary ${accept === false ? 'disabled' : ''}`} value="Cadastrar" onClick={() => handleCadastra()} />
+                            <TextArea
+                                htmlFor='depoimento'
+                                label='Deixe registrado sua vontade de doar'
+                                limit={256}
+                                value={depoimento}
+                                onChange={(e) => setDepoimento(e.target.value)}
+                            />
+                            <CheckBox
+                                label='Você aceita ser um doador de orgãos?'
+                                checked={accept}
+                                onClick={() => setAccept(!accept)}
+                            />
+                            <Button
+                                id="cadastro-btn"
+                                className={`solid-button-primary ${accept === false ? 'disabled' : ''}`}
+                                value="Cadastrar"
+                                onClick={accept === false ? () => {} : () => handleCadastra()}
+                            />
                         </Slide>
                     </SlideForm>
                 </SlideFormProvider>

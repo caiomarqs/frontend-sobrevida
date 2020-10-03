@@ -92,6 +92,7 @@ const Login = () => {
                     setErrors(thisErrors)
                     setShowErrors(true)
                 }
+                
                 else apiLogIn()
             })
         }
