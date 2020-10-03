@@ -7,6 +7,7 @@ import GRAU_FAMILIAR from '../../constants/grauFamiliar'
 import { CadastroFormHeader } from './CadastroFormHedear';
 import { handleContato, handleCpf, handleStringOnly } from './InputsMasks'
 import { validation } from './InputsValidation'
+import { authValidation, postUser, postFamiliar } from '../../services'
 
 const familiarModel = {
     nome: '',
@@ -56,7 +57,7 @@ const Cadastro = () => {
 
     const handleRemoveFamiliar = () => {
         const lastPosition = Object.keys(familiares).length - 1
-        
+
         const { [lastPosition]: obj, ...lastFamiliares } = familiares
 
         setFamliares(lastFamiliares)
@@ -64,7 +65,23 @@ const Cadastro = () => {
 
     const handleCadastra = () => {
         if (validation(nome, email, cpf, password, rPassword, uf, cidade, familiares, depoimento, accept, setErrors)) {
-            return console.log('valido')
+
+            const doador = { nome, email, cpf, password, uf, cidade, depoimento }
+
+            authValidation(email, password).then(({ data }) => {
+                if (data.email) {
+                    setErrors(['Email já registrado'])
+                    setShowErrors(true)
+                }
+                else {
+                    postUser(doador).then(user => {
+                        Object.entries(familiares).forEach(([key, familiar]) => {
+                            postFamiliar(familiar, user.data.cod)
+                        })
+                    })
+                }
+            })
+            
         }
         else {
             if (accept) { activeError() }
@@ -108,10 +125,10 @@ const Cadastro = () => {
                                                 }}
                                             />
                                             <SimpleInput
-                                                htmlFor={`contato-familiar`} label='Contato' type='text' value={familiar.contato}
+                                                htmlFor={`contato-familiar`} label='Contato' type='text' value={familiar.numero}
                                                 onChange={(e) => {
                                                     let value = handleContato(e.target.value)
-                                                    setFamliares({ ...familiares, [`${key}`]: { ...familiar, contato: value } })
+                                                    setFamliares({ ...familiares, [`${key}`]: { ...familiar, numero: value } })
                                                 }}
                                                 maxLength={15}
                                             />

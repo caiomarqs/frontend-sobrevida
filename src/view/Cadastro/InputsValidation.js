@@ -56,10 +56,7 @@ const validation = (nome, email, cpf, password, rPassword, uf, cidade, familiare
     if(!accept) {
         thisErrors.push(`Você precisa aceitar em ser um doador`)
     }
-
-    console.log(thisErrors)
     cb(thisErrors)
-
     return thisErrors.length === 0
 }
 

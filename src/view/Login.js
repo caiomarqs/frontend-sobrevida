@@ -63,37 +63,36 @@ const Login = () => {
 
     }, [email, password])
 
-    const apiLogIn = async () => {
-        try {
-            const { data } = await authLogIn(email, password)
-            setErrors(['Usuario Autenticado'])
-            setShowErrors(true)
-            setEmail('')
-            setPassword('')
-
-            dispatch({ type: AUTH_ACTIONS.SET_SESSION })
-            setCookie('token', data.token)
-
-            history.push('/dash')
-        } catch (err) {
-            setErrors(['Usuário ou senha invalidos'])
-            setShowErrors(true)
-        }
-    }
+ 
 
     const handleLogin = useCallback(() => {
+
+        const apiLogIn = async () => {
+            try {
+                const { data } = await authLogIn(email, password)
+                setEmail('')
+                setPassword('')
+                dispatch({ type: AUTH_ACTIONS.SET_SESSION })
+                setCookie('token', data.token)
+                history.push('/dash')
+            } catch (err) {
+                setErrors(['Usuário ou senha invalidos'])
+                setShowErrors(true)
+            }
+        }
+
         if (validation()) {
             authValidation(email, password).then(({ data }) => {
                 const thisErrors = []
+                
                 if (!data.email) thisErrors.push('Emai não cadastrado')
                 else if (!data.password) thisErrors.push('Sua senha está errada')
+                
                 if (thisErrors.length !== 0) {
                     setErrors(thisErrors)
                     setShowErrors(true)
                 }
-                else {
-                    apiLogIn()
-                }
+                else apiLogIn()
             })
         }
         else {
