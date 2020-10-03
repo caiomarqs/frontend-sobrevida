@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 
 import { FormPage, FormFooter, SlideForm, SimpleInput, DropDown, TextArea, Slide, CheckBox, Button, CloseAlert } from '../../components'
 import { SlideFormProvider } from '../../contexts'
@@ -23,6 +24,8 @@ const cadastroTitles = [
 ]
 
 const Cadastro = () => {
+
+    const history = useHistory()
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -78,10 +81,11 @@ const Cadastro = () => {
                         Object.entries(familiares).forEach(([key, familiar]) => {
                             postFamiliar(familiar, user.data.cod)
                         })
+                        history.push('/login')
                     })
                 }
             })
-            
+
         }
         else {
             if (accept) { activeError() }
