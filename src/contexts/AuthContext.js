@@ -6,14 +6,16 @@ import { authReducer } from '../reducers'
 const Authcontext = createContext()
 
 const AUTH_ACTIONS = {
-    LOG_IN: 'LOG_IN',
     LOG_OUT: 'LOG_OUT',
-    SET_SESSION: 'SET_SESSION'
+    SET_SESSION: 'SET_SESSION',
+    SET_USER_INFOS: 'SET_USER_INFOS'
 }
 
 const initalState = {
     isAuth: false,
-    token: ''
+    token: '',
+    user: {},
+    id: 0
 }
 
 const AuthProvider = (props) => {
@@ -23,7 +25,7 @@ const AuthProvider = (props) => {
 
     useEffect(() => {
         if (cookie.token) {
-            dispatch({ type: AUTH_ACTIONS.SET_SESSION, payload: cookie.token })
+            dispatch({ type: AUTH_ACTIONS.SET_SESSION, payload: { token: cookie.token, id: cookie.id } })
         }
     }, [cookie, setCookie, removeCookie])
 

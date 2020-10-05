@@ -50,6 +50,7 @@ const Nav = (props) => {
     const handleLogOut = () => {
         dispatch({ type: AUTH_ACTIONS.LOG_OUT })
         removeCookie('token')
+        removeCookie('id')
         history.push('/')
     }
 

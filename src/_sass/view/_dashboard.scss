@@ -1,4 +1,68 @@
-#dash-painel{
+#dash-painel {
     min-height: calc(100vh - 6rem);
     padding-top: 6rem;
+}
+
+#changepass-container {
+    display: flex;
+    min-height: 10rem;
+    align-items: center;
+
+    #simple-input-group-old-pass,
+    #simple-input-group-new-pass,
+    #changepass-btn {
+        flex: 1;
+    }
+
+    #simple-input-group-old-pass,
+    #simple-input-group-new-pass {
+        margin-right: 1.5rem;
+    }
+
+    #changepass-btn {
+        margin-top: 1.3rem;
+    }
+}
+
+#delete-acount-container {
+    display: flex;
+    min-height: 10rem;
+    align-items: center;
+
+    p {
+        flex: 2;
+        width: 100%;
+        margin-right: 3rem;
+    }
+
+    #delete-acount-btn {
+        flex: 1;
+    }
+}
+
+
+#delete-acount-modal.modal-p-container{
+    height: fit-content;
+
+    .modal-p-content {
+        @include noselect();
+    
+        >*{
+            margin-bottom: 0.5rem;
+        }
+    
+        a {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        >span{
+            @include links();
+            font-weight: bolder;
+        }
+    }
+}
+
+.close-alert {
+    margin-top: 3rem;
 }

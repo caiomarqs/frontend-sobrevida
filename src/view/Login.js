@@ -73,7 +73,7 @@ const Login = () => {
                 const { data } = await authLogIn(email, password)
                 setEmail('')
                 setPassword('')
-                dispatch({ type: AUTH_ACTIONS.SET_SESSION, payload: data.token })
+                dispatch({ type: AUTH_ACTIONS.SET_SESSION, payload: { token: data.token, id: data.id } })
                 setCookie('token', data.token)
                 setCookie('id', data.id)
                 history.push('/dash')

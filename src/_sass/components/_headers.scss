@@ -31,3 +31,30 @@
         }
     }
 }
+
+
+.config-header {
+    font-weight: bold;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 0.8px solid $cinza-000;
+
+
+    h6 {
+        flex: 1;
+        color: $preto-000;
+        transition: color 0.15s ease-in-out;
+    }
+
+
+    @media (max-width: $max-md) {
+        margin-top: 1rem;
+
+        a {
+            @include links();
+        }
+    }
+}
+
