@@ -1,5 +1,17 @@
 import axios from 'axios'
 
+const getUser = async (id, token) => {
+    return axios({
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        method: 'GET',
+        url: `/doador/${id}`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+}
+
 const postUser = async (user) => {
     return axios({
         baseURL: process.env.REACT_APP_SERVER_URL,
@@ -27,27 +39,32 @@ const postUser = async (user) => {
     })
 }
 
-const postFamiliar = async (familiar, idUser) => {
+const patchPasswordUser = async (id, password, token) => {
     return axios({
         baseURL: process.env.REACT_APP_SERVER_URL,
-        method: 'POST',
-        url: '/familiar',
-        data: {
-            nome: familiar.nome.substr(0, familiar.nome.indexOf(' ')),
-            sobreNome: familiar.nome.substr(familiar.nome.indexOf(' ')+1),
-            parentesco: familiar.parentesco,
-            descParentesco: familiar.descParentesco === undefined ? ''  : familiar.descParentesco,
-            contatos: [
-                {
-                    numero: familiar.numero
-                }
-            ],
-            codDoador: idUser
-        },
+        method: 'PATCH',
+        url: `/doador/${id}`,
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        data: {
+            senha: password
         }
     })
 }
 
-export { postUser, postFamiliar }
+
+const deleteUser = async (id, token) => {
+    return axios({
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        method: 'DELETE',
+        url: `/doador/${id}`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+}
+
+export { getUser, postUser, patchPasswordUser, deleteUser }
