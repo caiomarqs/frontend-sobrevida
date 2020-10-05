@@ -96,6 +96,9 @@ const Login = () => {
                 }
 
                 else apiLogIn()
+            }).catch(e => {
+                setErrors(['Servidor indiponivel'])
+                setShowErrors(true)
             })
         }
         else {

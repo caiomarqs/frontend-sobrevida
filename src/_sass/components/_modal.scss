@@ -10,7 +10,7 @@
 
 .modal-p-container{
     width: 32rem;
-    height: 22.5rem;
+    min-height: 22.5rem;
     background-color: $branco-000;
     position: absolute;
     z-index: 2000;
@@ -57,5 +57,11 @@
         padding: 1rem;
         display: flex;
         flex-direction: column;
+    }
+
+    @media (max-width: $max-sm) {
+        width: calc(100% - 2rem);
+        left: 1rem;
+        margin: auto;
     }
 }
