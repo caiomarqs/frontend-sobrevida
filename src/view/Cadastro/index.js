@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { FormPage, FormFooter, SlideForm, SimpleInput, DropDown, TextArea, Slide, CheckBox, Button, CloseAlert } from '../../components'
 import { SlideFormProvider } from '../../contexts'
-import UFS from '../../constants/ufs'
 import GRAU_FAMILIAR from '../../constants/grauFamiliar'
 import { CadastroFormHeader } from './CadastroFormHedear'
 import { handleContato, handleCpf, handleStringOnly } from './InputsMasks'
 import { validation } from './InputsValidation'
-import { authValidation, postUser, postFamiliar } from '../../services'
+import { authValidation, postUser, postFamiliar, getEstados, getCidades } from '../../services'
+import { sortObjectArrayByKey } from '../../utils'
 
 const familiarModel = {
     nome: '',
@@ -30,7 +30,9 @@ const Cadastro = () => {
     const [password, setPassword] = useState('')
     const [rPassword, setRPassword] = useState('')
     const [uf, setUf] = useState('')
+    const [ibgeUfs, setIbgeUfs] = useState([])
     const [cidade, setCidade] = useState('')
+    const [ibgeCidades, setIbgeCidades] = useState([])
     const [familiares, setFamliares] = useState({ 0: familiarModel })
     const [depoimento, setDepoimento] = useState('')
     const [accept, setAccept] = useState(false)
@@ -39,6 +41,14 @@ const Cadastro = () => {
     const [showSuccess, setShowSuccess] = useState(false)
 
     const familiaresForms = []
+
+    useEffect(() => {
+        getEstados().then(({ data }) => {
+            const ordenedData = sortObjectArrayByKey(data, "nome") //Ordenando os ufs por nome
+            setIbgeUfs(ordenedData)
+            console.log(data)
+        })
+    }, [])
 
     const activeError = () => {
         setShowErrors(true)
@@ -100,6 +110,13 @@ const Cadastro = () => {
         }
     }
 
+    const handleCarregarCidades = (uf) => {
+        getCidades(uf).then(({data}) => {
+            setIbgeCidades(data)
+        })
+        setUf(uf)
+    }
+
     return (
         <FormPage brandStyle="cadastro-brand" formStyle="cadastro-principal-container" imgSrc='clipBoard.png' pageName='Cadastro' >
             <div className='cadastro-form-container'>
@@ -122,8 +139,26 @@ const Cadastro = () => {
                             <SimpleInput htmlFor='cpf' label='CPF' type='text' value={cpf} onChange={(e) => handleCpf(e.target.value, setCpf)} maxLength={14} />
                             <SimpleInput htmlFor='password' label='Senha' type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                             <SimpleInput htmlFor='rPassword' label='Repita sua senha' type='password' value={rPassword} onChange={(e) => setRPassword(e.target.value)} />
-                            <DropDown htmlFor='uf' label='UF' firstOption='' options={UFS} value={uf} onChange={(e) => setUf(e.target.value)} />
-                            <SimpleInput htmlFor='cidade' label='Cidade' type='text' value={cidade} onChange={(e) => handleStringOnly(e.target.value, setCidade)} />
+
+                            <DropDown
+                                htmlFor='uf'
+                                label='UF'
+                                options={ibgeUfs.map((uf) => ({ value: uf.sigla, label: uf.sigla }))}
+                                value={uf}
+                                onChange={(e) => handleCarregarCidades(e.target.value)}
+                                firstOption=""
+                            />
+
+                            <DropDown
+                                htmlFor='cidade'
+                                label='Cidade'
+                                options={ibgeCidades.map((cidade) => ({ value: cidade.nome, label: cidade.nome }))}
+                                value={cidade}
+                                onChange={(e) => setCidade(e.target.value)}
+                                firstOption=""
+                            />
+
+                            {/* <SimpleInput htmlFor='cidade' label='Cidade' type='text' value={cidade} onChange={(e) => handleStringOnly(e.target.value, setCidade)} /> */}
                         </Slide>
                         <Slide className='slide cadastro-slide-2' id='cadastro-slide-2' index={1}>
                             {familiaresForms}
@@ -198,7 +233,7 @@ const Cadastro = () => {
                                 id="cadastro-btn"
                                 className={`solid-button-primary ${accept === false ? 'disabled' : ''}`}
                                 value="Cadastrar"
-                                onClick={accept === false ? () => {} : () => handleCadastra()}
+                                onClick={accept === false ? () => { } : () => handleCadastra()}
                             />
                         </Slide>
                     </SlideForm>

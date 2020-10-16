@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DropDown = ({ htmlFor, label, firstOption, options, value, onChange }) => {
+const DropDown = ({ htmlFor, label, firstOption, options = {value: "", label: ""}, value, onChange }) => {
     return (
         <div className='dropdown-input-group' id={`dropdown-input-group-${htmlFor}`}>
             <label htmlFor={htmlFor}>{label}</label>
