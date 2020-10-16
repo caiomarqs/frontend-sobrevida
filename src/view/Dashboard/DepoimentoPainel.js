@@ -21,13 +21,17 @@ const DepoimentoPainel = () => {
         if (!authState.user.cod) {
             getUser(cookie.id, cookie.token).then(({ data }) => {
                 dispatch({ type: AUTH_ACTIONS.SET_USER_INFOS, payload: data })
-                setDepoimento(data.depoimento.depoimento)
-                setNewDepoimento(data.depoimento.depoimento)
+                if (data.depoimento) {
+                    setDepoimento(data.depoimento.depoimento)
+                    setNewDepoimento(data.depoimento.depoimento)
+                }
             })
         }
         else {
-            setDepoimento(authState.user.depoimento.depoimento)
-            setNewDepoimento(authState.user.depoimento.depoimento)
+            if (authState.user.depoimento) {
+                setDepoimento(authState.user.depoimento.depoimento)
+                setNewDepoimento(authState.user.depoimento.depoimento)
+            }
         }
     }, [cookie, authState, dispatch])
 
@@ -54,7 +58,7 @@ const DepoimentoPainel = () => {
                         <p>Digite seu depoimento a baixo:</p>
                         <TextArea
                             limit={250}
-                            value={depoimento !== '' ? newDepoimento : ''}
+                            value={newDepoimento}
                             htmlFor='depoimento-dash-area'
                             onChange={(e) => setNewDepoimento(e.target.value)}
                         />
