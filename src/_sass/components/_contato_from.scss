@@ -1,0 +1,79 @@
+.contatos-familiar-container{
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: $cinza-400;
+        transition: color 0.15s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.75rem;
+        i > svg > path {
+            transition: fill 0.15s ease-in-out;
+        }
+
+        &:hover {
+            color: $preto-000;
+
+            i > svg > path {
+                fill: $preto-000;
+            }
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.contato-line-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 2rem 0;
+
+    .simple-input-group,
+    .custom-button {
+        flex: 1;
+    }
+
+    .simple-input-group {
+        margin-right: 0.75rem;
+    }
+
+    .custom-button {
+        align-self: flex-end;
+
+        &:first-of-type {
+            margin: 0 0.75rem;
+        }
+
+        &:last-of-type {
+            margin: 0 0 0 0.75rem;
+        }
+    }
+
+    @media (max-width: $max-md) {
+        flex-direction: column;
+
+        .simple-input-group,
+        .custom-button {
+            flex: none;
+        }
+
+        .custom-button {
+            width: 100%;
+
+            &:first-of-type,
+            &:last-of-type {
+                margin: 0.75rem 0 0 0;
+            }
+        }
+
+        .simple-input-group {
+            margin-right: 0;
+        }
+    }
+}
