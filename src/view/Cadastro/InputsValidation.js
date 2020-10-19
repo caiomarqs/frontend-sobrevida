@@ -11,7 +11,7 @@ const validation = (nome, email, cpf, password, rPassword, uf, cidade, familiare
     else if (nome.trim().length < 4) {
         thisErrors.push('O nome deve conter no minimo 4 letras')
     }
-    else if (nome.indexOf(' ') === 4 && nome.substr(nome.indexOf(' ')+1) === '') {
+    else if (nome.indexOf(' ') === 4 && nome.substr(nome.indexOf(' ') + 1) === '') {
         thisErrors.push('Coloque o seu nome completo')
     }
 
@@ -42,7 +42,7 @@ const validation = (nome, email, cpf, password, rPassword, uf, cidade, familiare
         else if (familiar.nome.trim().length < 4) {
             thisErrors.push(`O nome do ${(parseInt(key) + 1)}º é muito curto`)
         }
-        else if (familiar.nome.indexOf(' ') === 4 && familiar.nome.substr(familiar.nome.indexOf(' ')+1) === '') {
+        else if (familiar.nome.indexOf(' ') === 4 && familiar.nome.substr(familiar.nome.indexOf(' ') + 1) === '') {
             thisErrors.push(`O nome do ${(parseInt(key) + 1)}º não está completo`)
         }
 
@@ -73,12 +73,12 @@ const validation = (nome, email, cpf, password, rPassword, uf, cidade, familiare
 }
 
 const validateCpf = (strCpf) => {
-    
+
     let soma;
     let resto;
-    
+
     if (strCpf.trim().length !== 0) {
-        
+
         let cpf = strCpf
             .replace('.', "")
             .replace('.', "")
@@ -100,11 +100,45 @@ const validateCpf = (strCpf) => {
         if ((resto === 10) || (resto === 11)) resto = 0;
         if (resto !== parseInt(cpf.substring(10, 11))) return false;
         return true;
-        
+
     }
 
     return false
 }
 
+const familiarValidation = (familiar) => {
+    const thisErrors = []
 
-export { validation }
+    if (familiar.nome.trim() === "") {
+        thisErrors.push(`O nome do familiar não pode estar nulo`)
+    }
+    else if (familiar.nome.trim().length < 4) {
+        thisErrors.push(`O nome do é muito curto`)
+    }
+
+    if (familiar.nome.substr(familiar.nome.indexOf(' ') + 1) === familiar.nome || familiar.nome.substr(familiar.nome.indexOf(' ') + 1) === '') {
+        thisErrors.push(`O nome do familiar não está completo`)
+    }
+
+    if (familiar.parentesco === 0 || familiar.parentesco === '') {
+        thisErrors.push(`Selecione um parentesco valido para o familiar`)
+    }
+
+    if (familiar.numero.trim().length < 15 || familiar.numero.trim().length > 16) {
+        thisErrors.push(`Coloque um numero valido para o familiar`)
+    }
+
+    if (familiar.parentesco === "OUTRO" && familiar.descParentesco.trim() === "") {
+        thisErrors.push(`A descrição do parentesco não pode estar nula no familiar`)
+    }
+
+    if (familiar.parentesco === "OUTRO" && familiar.nome.trim() < 4) {
+        thisErrors.push(`A descrição do parentesco é muito curta no familiar`)
+    }
+
+
+    return [thisErrors.length === 0, thisErrors]
+}
+
+
+export { validation, familiarValidation }

@@ -42,10 +42,20 @@
     border-bottom: 0.8px solid $cinza-000;
 
 
-    h6 {
+    h6, p {
         flex: 1;
         color: $preto-000;
         transition: color 0.15s ease-in-out;
+    }
+
+    
+    button {
+        color: $cinza-400;
+        transition: color 0.15s ease-in-out;
+        &:hover {
+            color: $preto-000;
+            text-decoration: none;
+        }
     }
 
 
