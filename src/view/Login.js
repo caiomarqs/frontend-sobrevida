@@ -23,7 +23,6 @@ const Login = () => {
 
     const { dispatch } = useContext(Authcontext)
 
-
     //Handle email
     const handleEmail = (thisEmail) => {
         setEmail(thisEmail)
