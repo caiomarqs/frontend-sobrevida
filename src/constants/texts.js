@@ -28,13 +28,13 @@ export default {
 
     'doeSection.titulo': 'Doe orgãos e salve vidas!',
     'doeSection.titulo.item1': 'Ato de amor',
-    'doeSection.conteudo1.item1': 'O transplante pode salvar vidas ou devolver a qualidade de vida do paciente transplantado.',
-    'doeSection.conteudo2.item1': 'Além disso, estrutura a saúde física e psicológica de toda a família envolvida.',
+    'doeSection.conteudo1.item1': 'O ato de doar devolve a esperança de uma pessoa e de toda sua família. É a intenção e não a doação, que faz o doador.',
+    'doeSection.conteudo2.item1': '',
     'doeSection.titulo.item2': 'Registre sua vontade',
-    'doeSection.conteudo1.item2': 'Para ser doador basta avisar sua família, dizendo: “Quero ser doador de órgãos”.',
-    'doeSection.conteudo2.item2': 'A doação só acontece após a autorização familiar documentada.',
+    'doeSection.conteudo1.item2': 'Para ser doador, concientize sua família que deseja doar seus órgãos, a doação só ocorrerá com permissão dos mesmos.',
+    'doeSection.conteudo2.item2': '',
     'doeSection.titulo.item3': 'Ajude a mudar vidas',
-    'doeSection.conteudo1.item3': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    'doeSection.conteudo1.item3': 'Uma doação de órgãos é muito mais que um gesto de bondade, é permitir que uma pessoa continue sonhando com a vida.',
 
     'informacao.titulo4': 'Tipos de doadores',
     'informacao.conteudo4.tipo1': 'Doador vivo é qualquer pessoa saudável e capaz, nos termos da lei, que concorde com a doação e que esteja apta a realizá-la sem prejudicar sua própria saúde. O doador vivo pode doar um dos rins, parte do fígado ou dos pulmões e medula óssea. ',
@@ -57,10 +57,10 @@ export default {
     'chart.button6': 'Córnea',
 
     'chartsSection.titulo': 'Para quem vão os órgãos e tecidos?',
-    'chartsSection.p': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    'chartsSection.p': 'Os dados mostram que o número de pacientes na lista de espera é muito superior ao número de transplantes, dessa forma concluimos que há muito trabalho pela frente, contamos com você nessa jornada.',
 
     'depoimentosSection.titulo': 'Conheça Essas Vidas',
-    'depoimentosSection.subTitulo': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    'depoimentosSection.subTitulo': 'Os relatos abaixo são demonstrações de casos reais (entre 2016 á 2019) de transplantes de órgãos que mudaram completamente a vida de pessoas. Neles é possível sentir emoção de quem doa e quem recebe.',
 
     'depoimento1.titulo': 'Fabiana Oliveira',
     'depoimento1.subTitulo': 'Autoriza a doação de órgãos de sua filha Elisa em 2019.',
@@ -71,18 +71,18 @@ export default {
     'depoimento2.body': '“A exatamente dois anos atrás eu estava passando por um momento muito lindo da minha vida, o meu tão esperado transplante de fígado..pÉ quase inacreditável como eu estou diferente e como a vida cria um novo sentido depois que passamos por uma situação difícil..pHoje eu me vejo de uma forma totalmente diferente, sou uma pessoa melhor e muito mais feliz e vou ser eternamente grata a família que em um momento de tanta dor, resolveu me dar essa nova vida.”',
     'depoimento2.resumo': '“Hoje eu me vejo de uma forma totalmente diferente, sou uma pessoa melhor e muito mais feliz e vou ser eternamente grata a família que em um momento de tanta dor, resolveu me dar essa nova vida.”',
 
-    'depoimento3.titulo':'Benício Fonseca',
+    'depoimento3.titulo': 'Benício Fonseca',
     'depoimento3.subTitulo': '5 anos, realizou seu transplante em 2017.',
     'depoimento3.body': '“Chegou a tão sonhada ligação às 2:30 da manhã: tinha um Rim e Benício era um dos candidatos. A emoção tomou conta de mim e minha voz sumiu naquela hora..pO “Sim” de uma família salvou a vida do meu filho.”',
-    
-    'depoimento4.titulo':'Maria Alice',
+
+    'depoimento4.titulo': 'Maria Alice',
     'depoimento4.subTitulo': '8 anos, realizou seu transplante em 2018.',
     'depoimento4.body': '“Após um ano de espera, Maria foi agraciada e desde então conhecemos suas risadas altas, seus saltos, suas corridas e brincadeiras sem cansaço..pTudo isso graças a Deus e ao “SIM” de uma família que em um momento tão difícil foi generosa, solidária e nos deu o maior presente: A VIDA.”',
-    
-    'depoimento5.titulo':'Fernanda de Castro',
+
+    'depoimento5.titulo': 'Fernanda de Castro',
     'depoimento5.subTitulo': 'Autorizou a doação de órgãos de seu pai Francisco em 2016.',
     'depoimento5.body': '“Até em um momento tão difícil, meu pai foi solidário e pode ajudar outras famílias a não sentir a dor da perda. No momento de tanta tristeza, eu disse sim para a doação de órgãos.”',
-    
+
     'duvidasSection.titulo': 'Dúvidas Frequentes',
     'perguntas.pergunta1': 'O que é doação de órgãos?',
     'perguntas.resposta1': 'A doação de órgãos ou de tecidos é um ato pelo qual manifestamos a vontade de doar uma ou mais partes do nosso corpo para ajudar no tratamento de outras pessoas.',
@@ -100,7 +100,7 @@ export default {
     'perguntas.resposta7': 'O doador está sujeito aos riscos normais de se submeter a uma cirurgia com anestesia geral, mas antes do procedimento são feitos exames a fim de minimizar os riscos.',
 
     'chatBrandSection.title': 'Converse com Vidinha',
-    'chatBrandSection.subTitle': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    'chatBrandSection.subTitle': 'Tem alguma dúvida? Vidinha é especialista no assunto! \n Ela irá te auxiliar a compreender melhor sobre as dúvidas mais frequentes e como você pode fazer para se tornar um doador!',
 
     'chatContainer.title': 'Tire suas dúvidas',
 
