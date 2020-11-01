@@ -95,4 +95,57 @@ const deleteUser = async (id, token) => {
     })
 }
 
-export { getUser, postUser, putUser, patchPasswordUser, deleteUser }
+const postDepoimentoUser = async (id, depoimento, token) => {
+    return axios({
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        method: 'POST',
+        url: `/doador/${id}/depoimento`,
+        data: {
+            depoimento: depoimento,
+            pathToFile: ""
+        },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+}
+
+const putDepoimentoUser = async (id, depoimento, token) => {
+    return axios({
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        method: 'PUT',
+        url: `/doador/${id}/depoimento`,
+        data: {
+            depoimento: depoimento,
+            pathToFile: ""
+        },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+}
+
+const deleteDepoimentoUser = async (id, token) => {
+    return axios({
+        baseURL: process.env.REACT_APP_SERVER_URL,
+        method: 'DELETE',
+        url: `/doador/${id}/depoimento`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+}
+
+export {
+    getUser,
+    postUser,
+    putUser,
+    patchPasswordUser,
+    deleteUser,
+    postDepoimentoUser,
+    putDepoimentoUser,
+    deleteDepoimentoUser,
+}

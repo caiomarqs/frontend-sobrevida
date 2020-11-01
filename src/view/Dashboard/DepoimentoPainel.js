@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie'
 
 import { Button, DashboardHeader, Modal, TextArea, CloseAlert } from '../../components'
 import { Authcontext, AUTH_ACTIONS } from '../../contexts'
-import { getUser, putUser } from '../../services'
+import { getUser, putDepoimentoUser } from '../../services'
 
 const DepoimentoPainel = () => {
 
@@ -36,9 +36,7 @@ const DepoimentoPainel = () => {
     }, [cookie, authState, dispatch])
 
     const handleUpdateDepoimento = () => {
-        const newUser = { ...authState.user, depoimento: { ...authState.user.depoimento, depoimento: newDepoimento } }
-
-        putUser(cookie.id, newUser, cookie.token).then(() => {
+        putDepoimentoUser(cookie.id, newDepoimento, cookie.token).then(() => {
             setSuccess(['Depomento atulizado!'])
             setDepoimento(newDepoimento)
             setModal(false)
